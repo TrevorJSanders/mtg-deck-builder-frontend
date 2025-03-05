@@ -44,6 +44,9 @@ export const columns: ColumnDef<MTGcardSchema>[] = [
     enableHiding: true,
 
     sortingFn: (rowA, rowB, columnId) => {
+      //IDK Man...
+      if (columnId) {
+      }
       const getManaCost = (card: any, index: number) => {
         const cardFaces =
           card.CardFaces && Array.isArray(card.CardFaces)
@@ -190,6 +193,9 @@ export const columns: ColumnDef<MTGcardSchema>[] = [
     },
 
     sortingFn: (rowA, rowB, columnId) => {
+      //IDK Man...
+      if (columnId) {
+      }
       const getPowerAndToughness = (card: any, index: number) => {
         const cardFaces =
           card.CardFaces && Array.isArray(card.CardFaces)
@@ -263,6 +269,9 @@ export const columns: ColumnDef<MTGcardSchema>[] = [
       columnID: string,
       filterValue: string[]
     ) => {
+      //IDK Man...
+      if (columnID) {
+      }
       let rowValue = (row.getValue("Color") as string[]) || ["C"];
       rowValue = rowValue?.length ? rowValue : ["C"];
       let filterSet = new Set(filterValue?.length ? filterValue : [""]);
@@ -299,6 +308,9 @@ export const columns: ColumnDef<MTGcardSchema>[] = [
       columnID: string,
       filterValue: string[]
     ) => {
+      //IDK Man...
+      if (columnID) {
+      }
       const rowValue = row.original.FullArt;
       let ret = true;
       let filterSet = new Set(filterValue?.length ? filterValue : [""]);

@@ -8,7 +8,7 @@ import { MTGCardImage } from "./components/MTGCardImage";
 import { MTGContextProvider } from "./contexts/contexts";
 import { MTGDeckInfo } from "./components/MTGDeckInfo";
 import { MTGDeck } from "./components/MTGDeck";
-import { DataTableProvider } from "./contexts/dataTableContext";
+//import { DataTableProvider } from "./contexts/dataTableContext";
 //import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 function App() {
