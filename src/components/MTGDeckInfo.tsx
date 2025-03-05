@@ -14,7 +14,7 @@ export function MTGDeckInfo() {
         <Input
           className="resize-none flex-1"
           id="deckname"
-          placeholder="My big dumb deck..."
+          placeholder="My deck..."
           value={deckname}
           onChange={(e) => setDeckname(e.target.value)}
         />
@@ -24,7 +24,7 @@ export function MTGDeckInfo() {
         <Label htmlFor="description">Description</Label>
         <Textarea
           className="scrollbar-thin resize-none flex-1"
-          placeholder="Blue is a crutch and I'm a limp little baby..."
+          placeholder="Blue is a crutch..."
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}

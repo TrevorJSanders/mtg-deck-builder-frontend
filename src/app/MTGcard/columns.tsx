@@ -124,7 +124,7 @@ export const columns: ColumnDef<MTGcardSchema>[] = [
     cell: ({ row }) => {
       const powerFlag = ":";
       const toughnessFlag = ";";
-      const newFaceTag = " // ";
+      //const newFaceTag = " // ";
 
       let rowValue: { Power: string; Toughness: string }[] = (row.original
         .CardFaces && Array.isArray(row.original.CardFaces)
