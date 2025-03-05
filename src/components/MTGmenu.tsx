@@ -19,7 +19,7 @@ import { Row } from "@tanstack/react-table";
 import { useMTGContext } from "@/contexts/contexts";
 import {
   DataTableContext,
-  DataTableProvider,
+  //DataTableProvider,
 } from "@/contexts/dataTableContext";
 
 const themeClasses = {

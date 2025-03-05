@@ -1,5 +1,5 @@
 import { MTGcardSchema } from "@/data/schema";
-import { Row, Table, TableState } from "@tanstack/react-table";
+import { Row } from "@tanstack/react-table";
 import React, { createContext, useContext, useEffect, useState } from "react";
 
 interface GroupedRows {
@@ -16,15 +16,15 @@ interface GroupedRows {
 
 const MTGContext = createContext({
   selectedRows: [] as Row<MTGcardSchema>[],
-  setSelectedRows: (rows: Row<MTGcardSchema>[]) => {},
+  setSelectedRows: (_rows: Row<MTGcardSchema>[]) => {},
   lastClickedId: "" as string,
-  setLastClickedId: (cardId: string) => {},
+  setLastClickedId: (_cardId: string) => {},
   groupedRows: {} as GroupedRows,
-  setGroupedRows: (rows: GroupedRows) => {},
+  setGroupedRows: (_rows: GroupedRows) => {},
   deckname: "",
-  setDeckname: (name: string) => {},
+  setDeckname: (_name: string) => {},
   description: "",
-  setDescription: (desc: string) => {},
+  setDescription: (_desc: string) => {},
 });
 
 export const MTGContextProvider = ({

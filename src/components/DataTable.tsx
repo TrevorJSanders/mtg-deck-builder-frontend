@@ -30,8 +30,8 @@ import { DataTablePagination } from "./DataTablePagination";
 import { DataTableToolbar } from "./DataTableToolbar";
 import { useMTGContext } from "@/contexts/contexts";
 import { MTGcardSchema } from "@/data/schema";
-import { attributes } from "@/data/data";
-import { DataTableContext } from "@/contexts/dataTableContext";
+//import { attributes } from "@/data/data";
+//import { DataTableContext } from "@/contexts/dataTableContext";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -44,7 +44,9 @@ export function DataTable<TData, TValue>({
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({});
   const [columnVisibility, setColumnVisibility] =
-    React.useState<VisibilityState>({});
+    React.useState<VisibilityState>({
+      Attribute: false,
+    });
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
     []
   );
@@ -60,9 +62,7 @@ export function DataTable<TData, TValue>({
     },
     state: {
       sorting,
-      columnVisibility: {
-        Attribute: false,
-      },
+      columnVisibility,
       rowSelection,
       columnFilters,
     },
