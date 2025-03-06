@@ -12,8 +12,8 @@ export const queryClient = new QueryClient({
     }
   });
 
-export const apiMongoDBClient = axios.create({
-  baseURL: 'http://localhost:3000/api/',
+export const apiClient = axios.create({
+  baseURL: 'https://mtg-deck-builder-backend.onrender.com/api/',
   headers: {
     'Content-Type': 'application/json',
   },

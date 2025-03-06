@@ -1,8 +1,8 @@
-import { apiMongoDBClient } from "./apiClient";
+import { apiClient } from "./apiClient";
 
 export const getAllCardsMTG = async () => {
     try{
-        const response = await apiMongoDBClient.get('/allCards/');
+        const response = await apiClient.get('/allCards/');
         return response.data;
     } catch(error) {
         throw new Error('Failed to fetch cards: ' + (error as Error).message);
@@ -11,7 +11,7 @@ export const getAllCardsMTG = async () => {
 
 export const getImgMTG = async (cardID: string) => {
     try{
-        const response = await apiMongoDBClient.get('/card/' + cardID);
+        const response = await apiClient.get('/card/' + cardID);
         return response.data;
     } catch(error) {
         throw new Error('Failed to fetch cards: ' + (error as Error).message);
