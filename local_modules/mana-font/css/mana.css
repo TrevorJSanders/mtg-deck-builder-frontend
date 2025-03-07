@@ -1,0 +1,2211 @@
+@font-face {
+  font-family: "Mana";
+  src: url("../fonts/mana.eot?v=1.18.0");
+  src: url("../fonts/mana.eot?#iefix&v=1.18.0") format("embedded-opentype"), url("../fonts/mana.woff?v=1.18.0") format("woff"), url("../fonts/mana.ttf?v=1.18.0") format("truetype"), url("../fonts/mana.svg?v=1.18.0#mana") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MPlantin";
+  src: url("../fonts/mplantin.eot?v=1.18.0");
+  src: url("../fonts/mplantin.eot?#iefix&v=1.18.0") format("embedded-opentype"), url("../fonts/mplantin.woff?v=1.18.0") format("woff"), url("../fonts/mplantin.ttf?v=1.18.0") format("truetype"), url("../fonts/mplantin.svg?v=1.18.0#mplantin") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.mg {
+  display: inline-block;
+  font: normal normal normal 14px Mana;
+  font-size: inherit;
+  line-height: 1em;
+  text-rendering: auto;
+  transform: translate(0, 0);
+  speak: none;
+  text-transform: none;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --mg-mana-b: #a7999e;
+  --mg-mana-c: #d0c6bb;
+  --mg-mana-g: #9fcba6;
+  --mg-mana-r: #f19b79;
+  --mg-mana-u: #bcdaf7;
+  --mg-mana-w: #fdfbce;
+}
+
+.mg-w::before {
+  content: "\e600";
+}
+.mg-w-original::before {
+  content: "\e997";
+}
+.mg-w-list::before {
+  content: "\e998";
+}
+.mg-u::before {
+  content: "\e601";
+}
+.mg-b::before {
+  content: "\e602";
+}
+.mg-r::before {
+  content: "\e603";
+}
+.mg-g::before {
+  content: "\e604";
+}
+.mg-0::before {
+  content: "\e605";
+}
+.mg-1::before {
+  content: "\e606";
+}
+.mg-2 {
+  margin-left: inherit !important;
+}
+.mg-2::before {
+  content: "\e607";
+}
+.mg-3::before {
+  content: "\e608";
+}
+.mg-4::before {
+  content: "\e609";
+}
+.mg-5::before {
+  content: "\e60a";
+}
+.mg-6::before {
+  content: "\e60b";
+}
+.mg-7::before {
+  content: "\e60c";
+}
+.mg-8::before {
+  content: "\e60d";
+}
+.mg-9::before {
+  content: "\e60e";
+}
+.mg-10::before {
+  content: "\e60f";
+}
+.mg-11::before {
+  content: "\e610";
+}
+.mg-12::before {
+  content: "\e611";
+}
+.mg-13::before {
+  content: "\e612";
+}
+.mg-14::before {
+  content: "\e613";
+}
+.mg-15::before {
+  content: "\e614";
+}
+.mg-16::before {
+  content: "\e62a";
+}
+.mg-17::before {
+  content: "\e62b";
+}
+.mg-18::before {
+  content: "\e62c";
+}
+.mg-19::before {
+  content: "\e62d";
+}
+.mg-20::before {
+  content: "\e62e";
+}
+.mg-x::before {
+  content: "\e615";
+}
+.mg-y::before {
+  content: "\e616";
+}
+.mg-z::before {
+  content: "\e617";
+}
+.mg-s::before {
+  content: "\e619";
+}
+.mg-s-mtga::before {
+  content: "\e996";
+}
+.mg-c::before {
+  content: "\e904";
+}
+.mg-e::before, .mg-energy::before {
+  content: "\e907";
+}
+.mg-acorn::before {
+  content: "\e929";
+}
+.mg-ticket::before, .mg-tk::before {
+  content: "\e9c4";
+}
+.mg-1-2::before {
+  content: "\e902";
+}
+.mg-infinity::before {
+  content: "\e903";
+}
+.mg-l::before {
+  content: "\ea2d";
+}
+.mg-d::before {
+  content: "\ea2e";
+}
+.mg-spree::before {
+  content: "\ea55";
+}
+.mg-h::before, .mg-watermark-phyrexian::before {
+  content: "\e618";
+}
+.mg-paw::before {
+  content: "\ea32";
+}
+.mg-p::before {
+  content: "\e618";
+}
+.mg-tap::before {
+  content: "\e61a";
+}
+.mg-untap::before {
+  content: "\e61b";
+}
+.mg-tap-alt::before, .mg-tap-3ed::before {
+  content: "\e61c";
+}
+.mg-tap-4ed::before {
+  content: "\ea31";
+}
+.mg-chaos::before {
+  content: "\e61d";
+}
+.mg-artifact::before {
+  content: "\e61e";
+}
+.mg-battle::before {
+  content: "\e9d1";
+}
+.mg-battle-siege::before {
+  content: "\e9d2";
+}
+.mg-commander::before {
+  content: "\e9c6";
+}
+.mg-conspiracy::before {
+  content: "\e972";
+}
+.mg-creature::before {
+  content: "\e61f";
+}
+.mg-enchantment::before {
+  content: "\e620";
+}
+.mg-dungeon::before {
+  content: "\e995";
+}
+.mg-instant::before {
+  content: "\e621";
+}
+.mg-land::before {
+  content: "\e622";
+}
+.mg-multicolor::before {
+  content: "\e985";
+}
+.mg-phenomenon::before {
+  content: "\e96e";
+}
+.mg-plane::before {
+  content: "\e96f";
+}
+.mg-planeswalker::before, .mg-watermark-planeswalker::before {
+  content: "\e623";
+}
+.mg-rarity::before {
+  content: "\e96c";
+}
+.mg-saga::before {
+  content: "\e92a";
+}
+.mg-scheme::before {
+  content: "\e970";
+}
+.mg-sorcery::before {
+  content: "\e624";
+}
+.mg-token::before {
+  content: "\e96d";
+}
+.mg-tribal::before, .mg-multiple::before {
+  content: "\e925";
+}
+.mg-vanguard::before {
+  content: "\e971";
+}
+.mg-hand::before {
+  content: "\e9ca";
+}
+.mg-library::before {
+  content: "\e9cb";
+}
+.mg-graveyard::before {
+  content: "\e9cc";
+}
+.mg-exile::before {
+  content: "\e9cd";
+}
+.mg-wu::before, .mg-wb::before, .mg-rw::after, .mg-gw::after, .mg-2w::after, .mg-cw::after {
+  content: "\e600";
+}
+.mg-ub::before, .mg-ur::before, .mg-wu::after, .mg-gu::after, .mg-2u::after, .mg-cu::after {
+  content: "\e601";
+}
+.mg-br::before, .mg-bg::before, .mg-wb::after, .mg-ub::after, .mg-2b::after, .mg-cb::after {
+  content: "\e602";
+}
+.mg-rw::before, .mg-rg::before, .mg-ur::after, .mg-br::after, .mg-2r::after, .mg-cr::after {
+  content: "\e603";
+}
+.mg-gw::before, .mg-gu::before, .mg-bg::after, .mg-rg::after, .mg-2g::after, .mg-cg::after {
+  content: "\e604";
+}
+.mg-2w::before, .mg-2u::before, .mg-2b::before, .mg-2r::before, .mg-2g::before {
+  content: "\e607";
+}
+.mg-cw::before, .mg-cu::before, .mg-cb::before, .mg-cr::before, .mg-cg::before {
+  content: "\e904";
+}
+.mg-wp::before, .mg-up::before, .mg-bp::before, .mg-rp::before, .mg-gp::before, .mg-wup::before, .mg-wup::after, .mg-wbp::before, .mg-wbp::after, .mg-ubp::before, .mg-ubp::after, .mg-urp::before, .mg-urp::after, .mg-brp::before, .mg-brp::after, .mg-bgp::before, .mg-bgp::after, .mg-rwp::before, .mg-rwp::after, .mg-rgp::before, .mg-rgp::after, .mg-gwp::before, .mg-gwp::after, .mg-gup::before, .mg-gup::after {
+  content: "\e618";
+}
+.mg-100::before {
+  content: "\e900";
+}
+.mg-1000000::before {
+  content: "\e901";
+}
+.mg-loyalty-up::before {
+  content: "\e627";
+}
+.mg-loyalty-down::before {
+  content: "\e625";
+}
+.mg-loyalty-zero::before {
+  content: "\e626";
+}
+.mg-loyalty-start::before {
+  content: "\e628";
+}
+.mg-defense::before {
+  content: "\e9d7";
+}
+.mg-defense-border::before {
+  content: "\e9d8";
+}
+.mg-level::before {
+  content: "\e9c7";
+}
+.mg-level::after {
+  content: "\e9c8";
+}
+.mg-dfc-back::before {
+  content: "\e9d4";
+}
+.mg-dfc-day::before {
+  content: "\e906";
+}
+.mg-dfc-emrakul::before {
+  content: "\e90a";
+}
+.mg-dfc-enchantment::before {
+  content: "\e920";
+}
+.mg-dfc-facedown::before {
+  content: "\e9d6";
+}
+.mg-dfc-front::before {
+  content: "\e9d3";
+}
+.mg-dfc-ignite::before {
+  content: "\e908";
+}
+.mg-dfc-land::before {
+  content: "\e9c5";
+}
+.mg-dfc-lesson::before {
+  content: "\e98f";
+}
+.mg-dfc-meld::before {
+  content: "\e9d5";
+}
+.mg-dfc-modal-back::before {
+  content: "\e984";
+}
+.mg-dfc-modal-face::before {
+  content: "\e983";
+}
+.mg-dfc-moon::before {
+  content: "\e90b";
+}
+.mg-dfc-night::before {
+  content: "\e905";
+}
+.mg-dfc-saga::before {
+  content: "\e9cf";
+}
+.mg-dfc-saga-creature::before {
+  content: "\e9d0";
+}
+.mg-dfc-spark::before {
+  content: "\e909";
+}
+.mg-flashback::before {
+  content: "\e629";
+}
+.mg-power::before {
+  content: "\e921";
+}
+.mg-power-mtga::before {
+  content: "\ea2f";
+}
+.mg-toughness::before {
+  content: "\e922";
+}
+.mg-toughness-mtga::before {
+  content: "\ea30";
+}
+.mg-artist-brush::before {
+  content: "\e923";
+}
+.mg-artist-nib::before {
+  content: "\e924";
+}
+.mg-guild-azorius::before, .mg-watermark-azorius::before {
+  content: "\e90c";
+}
+.mg-guild-boros::before, .mg-watermark-boros::before {
+  content: "\e90d";
+}
+.mg-guild-dimir::before, .mg-watermark-dimir::before {
+  content: "\e90e";
+}
+.mg-guild-golgari::before, .mg-watermark-golgari::before {
+  content: "\e90f";
+}
+.mg-guild-gruul::before, .mg-watermark-gruul::before {
+  content: "\e910";
+}
+.mg-guild-izzet::before, .mg-watermark-izzet::before {
+  content: "\e911";
+}
+.mg-guild-orzhov::before, .mg-watermark-orzhov::before {
+  content: "\e912";
+}
+.mg-guild-rakdos::before, .mg-watermark-rakdos::before {
+  content: "\e913";
+}
+.mg-guild-selesnya::before, .mg-watermark-selesnya::before {
+  content: "\e914";
+}
+.mg-guild-simic::before, .mg-watermark-simic::before {
+  content: "\e915";
+}
+.mg-clan-abzan::before, .mg-watermark-abzan::before {
+  content: "\e916";
+}
+.mg-clan-jeskai::before, .mg-watermark-jeskai::before {
+  content: "\e917";
+}
+.mg-clan-mardu::before, .mg-watermark-mardu::before {
+  content: "\e918";
+}
+.mg-clan-sultai::before, .mg-watermark-sultai::before {
+  content: "\e919";
+}
+.mg-clan-temur::before, .mg-watermark-temur::before {
+  content: "\e91a";
+}
+.mg-clan-atarka::before, .mg-watermark-atarka::before {
+  content: "\e91b";
+}
+.mg-clan-dromoka::before, .mg-watermark-dromoka::before {
+  content: "\e91c";
+}
+.mg-clan-kolaghan::before, .mg-watermark-kolaghan::before {
+  content: "\e91d";
+}
+.mg-clan-ojutai::before, .mg-watermark-ojutai::before {
+  content: "\e91e";
+}
+.mg-clan-silumgar::before, .mg-watermark-silumgar::before {
+  content: "\e91f";
+}
+.mg-party-cleric::before {
+  content: "\ea59";
+}
+.mg-party-rogue::before {
+  content: "\ea58";
+}
+.mg-party-warrior::before {
+  content: "\ea57";
+}
+.mg-party-wizard::before {
+  content: "\ea56";
+}
+.mg-polis-setessa::before {
+  content: "\e926";
+}
+.mg-polis-akros::before {
+  content: "\e927";
+}
+.mg-polis-meletis::before {
+  content: "\e928";
+}
+.mg-school-lorehold::before, .mg-watermark-lorehold::before {
+  content: "\e99a";
+}
+.mg-school-prismari::before, .mg-watermark-prismari::before {
+  content: "\e99c";
+}
+.mg-school-quandrix::before, .mg-watermark-quandrix::before {
+  content: "\e99e";
+}
+.mg-school-silverquill::before, .mg-watermark-silverquill::before {
+  content: "\e9a0";
+}
+.mg-school-witherbloom::before, .mg-watermark-witherbloom::before {
+  content: "\e9a2";
+}
+.mg-counter-arrow::before {
+  content: "\e92b";
+}
+.mg-counter-brick::before {
+  content: "\e92c";
+}
+.mg-counter-brick-print::before {
+  content: "\ea52";
+}
+.mg-counter-charge::before {
+  content: "\e92d";
+}
+.mg-counter-charge-print::before {
+  content: "\ea53";
+}
+.mg-counter-damage::before {
+  content: "\e9dd";
+}
+.mg-counter-deathtouch::before {
+  content: "\ea51";
+}
+.mg-counter-devotion::before {
+  content: "\e92e";
+}
+.mg-counter-doom::before {
+  content: "\e92f";
+}
+.mg-counter-echo::before {
+  content: "\e930";
+}
+.mg-counter-finality::before, .mg-ability-finality::before {
+  content: "\ea54";
+}
+.mg-counter-flame::before {
+  content: "\e931";
+}
+.mg-counter-flood::before {
+  content: "\e932";
+}
+.mg-counter-fungus::before {
+  content: "\e933";
+}
+.mg-counter-gold::before {
+  content: "\e934";
+}
+.mg-counter-ki::before {
+  content: "\e935";
+}
+.mg-counter-lore::before {
+  content: "\e936";
+}
+.mg-counter-loyalty::before {
+  content: "\e937";
+}
+.mg-counter-mining::before {
+  content: "\e938";
+}
+.mg-counter-minus::before {
+  content: "\e939";
+}
+.mg-counter-minus-uneven::before {
+  content: "\e943";
+}
+.mg-counter-muster::before {
+  content: "\e93a";
+}
+.mg-counter-paw::before {
+  content: "\e93b";
+}
+.mg-counter-pin::before {
+  content: "\e93c";
+}
+.mg-counter-plus::before {
+  content: "\e93d";
+}
+.mg-counter-plus-uneven::before {
+  content: "\e944";
+}
+.mg-counter-rad::before {
+  content: "\ea50";
+}
+.mg-counter-scream::before {
+  content: "\e93e";
+}
+.mg-counter-skeleton::before {
+  content: "\e93f";
+}
+.mg-counter-skull::before {
+  content: "\e940";
+}
+.mg-counter-slime::before {
+  content: "\e941";
+}
+.mg-counter-time::before {
+  content: "\e942";
+}
+.mg-counter-verse::before {
+  content: "\e945";
+}
+.mg-counter-void::before {
+  content: "\e9ec";
+}
+.mg-counter-vortex::before {
+  content: "\e946";
+}
+.mg-counter-shield::before {
+  content: "\e9c3";
+}
+.mg-counter-stun::before {
+  content: "\e9c2";
+}
+.mg-ability-activated::before, .mg-ability-crew::before, .mg-ability-cycling::before {
+  content: "\e947";
+}
+.mg-ability-adamant::before {
+  content: "\e974";
+}
+.mg-ability-adapt::before {
+  content: "\e975";
+}
+.mg-ability-addendum::before {
+  content: "\e976";
+}
+.mg-ability-adventure::before {
+  content: "\e948";
+}
+.mg-ability-afflict::before {
+  content: "\e977";
+}
+.mg-ability-afterlife::before {
+  content: "\e978";
+}
+.mg-ability-aftermath::before {
+  content: "\e979";
+}
+.mg-ability-alliance::before {
+  content: "\e9b5";
+}
+.mg-ability-amass-orcs::before {
+  content: "\e9e0";
+}
+.mg-ability-amass-zombies::before, .mg-ability-amass::before {
+  content: "\e97a";
+}
+.mg-ability-ascend::before {
+  content: "\e94a";
+}
+.mg-ability-backup::before {
+  content: "\e9d9";
+}
+.mg-ability-bargain::before {
+  content: "\e9e2";
+}
+.mg-ability-blitz::before {
+  content: "\e9b4";
+}
+.mg-ability-boast::before {
+  content: "\e991";
+}
+.mg-ability-case-solved::before {
+  content: "\ea39";
+}
+.mg-ability-case-solved-print::before {
+  content: "\ea3a";
+}
+.mg-ability-casualty::before {
+  content: "\e9b7";
+}
+.mg-ability-celebration::before {
+  content: "\e9e3";
+}
+.mg-ability-changeling::before {
+  content: "\e9a6";
+}
+.mg-ability-channel::before {
+  content: "\e9b1";
+}
+.mg-ability-cleave::before {
+  content: "\e9ad";
+}
+.mg-ability-cloak::before {
+  content: "\ea35";
+}
+.mg-ability-collect-evidence::before {
+  content: "\ea36";
+}
+.mg-ability-combat-condition::before {
+  content: "\e9ce";
+}
+.mg-ability-companion::before {
+  content: "\e97b";
+}
+.mg-ability-constellation::before {
+  content: "\e97c";
+}
+.mg-ability-convoke-original::before {
+  content: "\e949";
+}
+.mg-ability-convoke::before {
+  content: "\e9da";
+}
+.mg-ability-corrupted::before {
+  content: "\e9c0";
+}
+.mg-ability-craft::before {
+  content: "\ea3f";
+}
+.mg-ability-crime::before {
+  content: "\ea45";
+}
+.mg-ability-coven::before {
+  content: "\e9aa";
+}
+.mg-ability-d20::before {
+  content: "\e999";
+}
+.mg-ability-day-night::before {
+  content: "\e9a8";
+}
+.mg-ability-daybound-nightbound::before {
+  content: "\e9a9";
+}
+.mg-ability-deathtouch::before {
+  content: "\e94b";
+}
+.mg-ability-decayed::before {
+  content: "\e9ac";
+}
+.mg-ability-defender::before {
+  content: "\e94c";
+}
+.mg-ability-delve::before {
+  content: "\ea3b";
+}
+.mg-ability-descend::before {
+  content: "\ea41";
+}
+.mg-ability-devotion::before {
+  content: "\e97d";
+}
+.mg-ability-discover::before {
+  content: "\ea40";
+}
+.mg-ability-disguise::before {
+  content: "\ea34";
+}
+.mg-ability-disturb::before {
+  content: "\e9ae";
+}
+.mg-ability-domain::before {
+  content: "\e9a7";
+}
+.mg-ability-double-strike::before {
+  content: "\e94d";
+}
+.mg-ability-dungeon::before {
+  content: "\e995";
+}
+.mg-ability-eerie::before {
+  content: "\ea4d";
+}
+.mg-ability-embalm::before {
+  content: "\e97e";
+}
+.mg-ability-enlist::before {
+  content: "\e9ba";
+}
+.mg-ability-enrage::before {
+  content: "\e9dc";
+}
+.mg-ability-enrage-original::before {
+  content: "\e94e";
+}
+.mg-ability-escape::before {
+  content: "\e969";
+}
+.mg-ability-eternalize::before {
+  content: "\e97f";
+}
+.mg-ability-exalted::before {
+  content: "\ea33";
+}
+.mg-ability-expend::before {
+  content: "\ea4a";
+}
+.mg-ability-exploit::before {
+  content: "\e9af";
+}
+.mg-ability-explore::before {
+  content: "\e94f";
+}
+.mg-ability-fabricate::before {
+  content: "\e9a5";
+}
+.mg-ability-ferocious::before {
+  content: "\ea3c";
+}
+.mg-ability-first-strike::before {
+  content: "\e950";
+}
+.mg-ability-flash::before {
+  content: "\e951";
+}
+.mg-ability-flying::before {
+  content: "\e952";
+}
+.mg-ability-for-mirrodin::before {
+  content: "\e9c1";
+}
+.mg-ability-forage::before {
+  content: "\ea49";
+}
+.mg-ability-foretell::before, .mg-watermark-foretell::before {
+  content: "\e990";
+}
+.mg-ability-gift::before {
+  content: "\ea46";
+}
+.mg-ability-goad::before, .mg-counter-goad::before {
+  content: "\e9c9";
+}
+.mg-ability-haste::before {
+  content: "\e953";
+}
+.mg-ability-hexproof::before {
+  content: "\e954";
+}
+.mg-ability-hexproof-black::before {
+  content: "\e955";
+}
+.mg-ability-hexproof-blue::before {
+  content: "\e956";
+}
+.mg-ability-hexproof-green::before {
+  content: "\e957";
+}
+.mg-ability-hexproof-red::before {
+  content: "\e958";
+}
+.mg-ability-hexproof-white::before {
+  content: "\e959";
+}
+.mg-ability-hideaway::before {
+  content: "\e9b8";
+}
+.mg-ability-impending::before {
+  content: "\ea4c";
+}
+.mg-ability-improvise::before {
+  content: "\e9de";
+}
+.mg-ability-incubate::before {
+  content: "\e9db";
+}
+.mg-ability-indestructible::before {
+  content: "\e95a";
+}
+.mg-ability-investigate::before {
+  content: "\e9ab";
+}
+.mg-ability-jumpstart::before {
+  content: "\e95b";
+}
+.mg-ability-kicker::before {
+  content: "\e989";
+}
+.mg-ability-landfall::before {
+  content: "\e988";
+}
+.mg-ability-learn::before {
+  content: "\e994";
+}
+.mg-ability-lifelink::before {
+  content: "\ea4b";
+}
+.mg-ability-lifelink-original::before {
+  content: "\e95c";
+}
+.mg-ability-magecraft::before {
+  content: "\e993";
+}
+.mg-ability-manifest-dread::before {
+  content: "\ea4f";
+}
+.mg-ability-meld::before {
+  content: "\e9bd";
+}
+.mg-ability-menace::before {
+  content: "\e95d";
+}
+.mg-ability-mentor::before {
+  content: "\e95e";
+}
+.mg-ability-morph::before {
+  content: "\ea3e";
+}
+.mg-ability-mutate::before {
+  content: "\e980";
+}
+.mg-ability-ninjutsu::before {
+  content: "\e9b2";
+}
+.mg-ability-obscura::before {
+  content: "\e9b6";
+}
+.mg-ability-offspring::before {
+  content: "\ea47";
+}
+.mg-ability-outlast::before {
+  content: "\ea3d";
+}
+.mg-ability-party::before {
+  content: "\e987";
+}
+.mg-ability-phyrexian::before {
+  content: "\e618";
+}
+.mg-ability-plot::before {
+  content: "\ea42";
+}
+.mg-ability-proliferate::before {
+  content: "\e981";
+}
+.mg-ability-prototype::before {
+  content: "\e9be";
+}
+.mg-ability-prowess::before {
+  content: "\e982";
+}
+.mg-ability-raid::before {
+  content: "\e95f";
+}
+.mg-ability-reach::before {
+  content: "\e960";
+}
+.mg-ability-read-ahead::before {
+  content: "\e9b9";
+}
+.mg-ability-reconfigure::before {
+  content: "\e9b3";
+}
+.mg-ability-revolt::before {
+  content: "\e961";
+}
+.mg-ability-ring-bearer::before {
+  content: "\e9df";
+}
+.mg-ability-riot::before {
+  content: "\e973";
+}
+.mg-ability-role-cursed::before {
+  content: "\e9e6";
+}
+.mg-ability-role-monster::before {
+  content: "\e9e7";
+}
+.mg-ability-role-royal::before {
+  content: "\e9e8";
+}
+.mg-ability-role-sorceror::before {
+  content: "\e9e9";
+}
+.mg-ability-role-wicked::before {
+  content: "\e9ea";
+}
+.mg-ability-role-young-hero::before {
+  content: "\e9eb";
+}
+.mg-ability-saddle::before {
+  content: "\ea43";
+}
+.mg-ability-specialize::before {
+  content: "\e9bb";
+}
+.mg-ability-spectacle::before {
+  content: "\e96b";
+}
+.mg-ability-spree::before {
+  content: "\ea44";
+}
+.mg-ability-static::before, .mg-ability-enchant::before {
+  content: "\e962";
+}
+.mg-ability-summoning-sickness::before {
+  content: "\e96a";
+}
+.mg-ability-surveil::before {
+  content: "\ea38";
+}
+.mg-ability-surveil-original::before {
+  content: "\e963";
+}
+.mg-ability-survival::before {
+  content: "\ea4e";
+}
+.mg-ability-suspect::before {
+  content: "\ea37";
+}
+.mg-ability-the-ring-tempts-you::before {
+  content: "\e9e1";
+}
+.mg-ability-toxic::before {
+  content: "\e9bf";
+}
+.mg-ability-training::before {
+  content: "\e9b0";
+}
+.mg-ability-trample::before {
+  content: "\e964";
+}
+.mg-ability-transform::before {
+  content: "\e965";
+}
+.mg-ability-triggered::before {
+  content: "\e966";
+}
+.mg-ability-undergrowth::before {
+  content: "\e967";
+}
+.mg-ability-unearth::before {
+  content: "\e9bc";
+}
+.mg-ability-valiant::before {
+  content: "\ea48";
+}
+.mg-ability-vigilance::before {
+  content: "\e968";
+}
+.mg-ability-ward::before {
+  content: "\e992";
+}
+.mg-ability-haktos-the-unscarred::before {
+  content: "\e9e4";
+}
+.mg-ability-robber-of-the-rich::before {
+  content: "\e9e5";
+}
+.mg-ability-duels-annihilator::before, .mg-ability-annihilator::before {
+  content: "\ea5a";
+}
+.mg-ability-duels-battle-cry::before, .mg-ability-battle-cry::before {
+  content: "\ea5b";
+}
+.mg-ability-duels-unblockable::before, .mg-ability-unblockable::before {
+  content: "\ea5c";
+}
+.mg-ability-duels-cannot-block::before, .mg-ability-cannot-block::before {
+  content: "\ea5d";
+}
+.mg-ability-duels-cannot-untap::before, .mg-ability-cannot-untap::before {
+  content: "\ea5e";
+}
+.mg-ability-duels-cohort::before, .mg-ability-cohort::before {
+  content: "\ea5f";
+}
+.mg-ability-duels-copy::before, .mg-ability-copy::before {
+  content: "\ea60";
+}
+.mg-ability-duels-deathtouch::before {
+  content: "\ea61";
+}
+.mg-ability-duels-defender::before {
+  content: "\ea62";
+}
+.mg-ability-duels-delirium::before, .mg-ability-delirium::before {
+  content: "\ea63";
+}
+.mg-ability-duels-detain::before, .mg-ability-detain::before {
+  content: "\ea64";
+}
+.mg-ability-duels-double-strike::before {
+  content: "\ea65";
+}
+.mg-ability-duels-dfc::before, .mg-ability-dfc::before {
+  content: "\ea66";
+}
+.mg-ability-duels-evolve::before, .mg-ability-evolve::before {
+  content: "\ea67";
+}
+.mg-ability-duels-exalted::before {
+  content: "\ea68";
+}
+.mg-ability-duels-exile::before, .mg-ability-exile::before {
+  content: "\ea69";
+}
+.mg-ability-duels-fading::before, .mg-ability-fading::before {
+  content: "\ea6a";
+}
+.mg-ability-duels-fear::before, .mg-ability-fear::before {
+  content: "\ea6b";
+}
+.mg-ability-duels-first-strike::before {
+  content: "\ea6c";
+}
+.mg-ability-duels-flying::before {
+  content: "\ea6d";
+}
+.mg-ability-duels-forestwalk::before, .mg-ability-forestwalk::before {
+  content: "\ea6e";
+}
+.mg-ability-duels-haste::before {
+  content: "\ea6f";
+}
+.mg-ability-duels-haunt::before, .mg-ability-haunt::before {
+  content: "\ea70";
+}
+.mg-ability-duels-hexproof::before {
+  content: "\ea71";
+}
+.mg-ability-duels-indestructible::before {
+  content: "\ea72";
+}
+.mg-ability-duels-infect::before, .mg-ability-infect::before {
+  content: "\ea73";
+}
+.mg-ability-duels-ingest::before, .mg-ability-ingest::before {
+  content: "\ea74";
+}
+.mg-ability-duels-intimidate::before, .mg-ability-intimidate::before {
+  content: "\ea75";
+}
+.mg-ability-duels-islandwalk::before, .mg-ability-islandwalk::before {
+  content: "\ea76";
+}
+.mg-ability-duels-legendary::before, .mg-ability-legendary::before {
+  content: "\ea77";
+}
+.mg-ability-duels-lifelink::before {
+  content: "\ea78";
+}
+.mg-ability-duels-menace::before {
+  content: "\ea79";
+}
+.mg-ability-duels-monstrous::before, .mg-ability-monstrous::before {
+  content: "\ea7a";
+}
+.mg-ability-duels-mountainwalk::before, .mg-ability-mountainwalk::before {
+  content: "\ea7b";
+}
+.mg-ability-duels-must-attack::before, .mg-ability-must-attack::before {
+  content: "\ea7c";
+}
+.mg-ability-duels-plainswalk::before, .mg-ability-plainswalk::before {
+  content: "\ea7d";
+}
+.mg-ability-duels-prevent-damage::before, .mg-ability-prevent-damage::before {
+  content: "\ea7e";
+}
+.mg-ability-duels-protection-black::before, .mg-ability-protection-black::before {
+  content: "\ea7f";
+}
+.mg-ability-duels-protection-blue::before, .mg-ability-protection-blue::before {
+  content: "\ea80";
+}
+.mg-ability-duels-protection-green::before, .mg-ability-protection-green::before {
+  content: "\ea81";
+}
+.mg-ability-duels-protection-red::before, .mg-ability-protection-red::before {
+  content: "\ea82";
+}
+.mg-ability-duels-protection-white::before, .mg-ability-protection-white::before {
+  content: "\ea83";
+}
+.mg-ability-duels-protection::before, .mg-ability-protection::before {
+  content: "\ea84";
+}
+.mg-ability-duels-rally::before, .mg-ability-rally::before {
+  content: "\ea85";
+}
+.mg-ability-duels-regenerate::before, .mg-ability-regenerate::before {
+  content: "\ea86";
+}
+.mg-ability-duels-renowned::before, .mg-ability-renowned::before {
+  content: "\ea87";
+}
+.mg-ability-duels-shroud::before, .mg-ability-shroud::before {
+  content: "\ea88";
+}
+.mg-ability-duels-skulk::before, .mg-ability-skulk::before {
+  content: "\ea89";
+}
+.mg-ability-duels-soulshift::before, .mg-ability-soulshift::before {
+  content: "\ea8a";
+}
+.mg-ability-duels-swampwalk::before, .mg-ability-swampwalk::before {
+  content: "\ea8b";
+}
+.mg-ability-duels-temporary-control::before, .mg-ability-temporary-control::before {
+  content: "\ea8c";
+}
+.mg-ability-duels-totem-armor::before, .mg-ability-totem-armor::before {
+  content: "\ea8d";
+}
+.mg-ability-duels-trample::before {
+  content: "\ea8e";
+}
+.mg-ability-duels-undying::before, .mg-ability-undying::before {
+  content: "\ea8f";
+}
+.mg-ability-duels-vigilance::before {
+  content: "\ea90";
+}
+.mg-watermark-agentsofsneak::before {
+  content: "\ea08";
+}
+.mg-watermark-arena::before {
+  content: "\ea1e";
+}
+.mg-watermark-brokers::before {
+  content: "\ea0d";
+}
+.mg-watermark-cabaretti::before {
+  content: "\ea0e";
+}
+.mg-watermark-colorpie::before {
+  content: "\e9f0";
+}
+.mg-watermark-conspiracy::before {
+  content: "\ea12";
+}
+.mg-watermark-corocoro::before {
+  content: "\ea15";
+}
+.mg-watermark-crossbreedlabs::before {
+  content: "\ea09";
+}
+.mg-watermark-cutiemark-apples::before {
+  content: "\ea27";
+}
+.mg-watermark-cutiemark-balloons::before {
+  content: "\ea28";
+}
+.mg-watermark-cutiemark-butterflies::before {
+  content: "\ea29";
+}
+.mg-watermark-cutiemark-gems::before {
+  content: "\ea04";
+}
+.mg-watermark-cutiemark-rainbow::before {
+  content: "\ea2a";
+}
+.mg-watermark-cutiemark-sparkle::before {
+  content: "\ea05";
+}
+.mg-watermark-cutiemark-waningmoon::before {
+  content: "\ea06";
+}
+.mg-watermark-cutiemark-waxingmoon::before {
+  content: "\ea07";
+}
+.mg-watermark-dci::before {
+  content: "\ea1d";
+}
+.mg-watermark-dengekimaoh::before {
+  content: "\ea14";
+}
+.mg-watermark-desparked::before {
+  content: "\e9f1";
+}
+.mg-watermark-dnd::before {
+  content: "\ea17";
+}
+.mg-watermark-flavor-aestheticconsultation::before {
+  content: "\e9f2";
+}
+.mg-watermark-flavor-farewelltoarms::before {
+  content: "\e9f3";
+}
+.mg-watermark-flavor-monkeymonkeymonkey::before {
+  content: "\e9f4";
+}
+.mg-watermark-flavor-moxlotus::before {
+  content: "\e9f5";
+}
+.mg-watermark-flavor-myfirsttome::before {
+  content: "\e9f6";
+}
+.mg-watermark-flavor-shoetree::before {
+  content: "\e9f7";
+}
+.mg-watermark-flavor-whenfluffybunniesattack::before {
+  content: "\e9f8";
+}
+.mg-watermark-flavor-manascrew::before {
+  content: "\ea2c";
+}
+.mg-watermark-fnm::before {
+  content: "\ea16";
+}
+.mg-watermark-goblinexplosioneers::before {
+  content: "\ea0a";
+}
+.mg-watermark-grandprix::before {
+  content: "\ea1f";
+}
+.mg-watermark-grandprix2::before {
+  content: "\ea20";
+}
+.mg-watermark-herospath::before {
+  content: "\ea02";
+}
+.mg-watermark-herospath-1::before {
+  content: "\e9f9";
+}
+.mg-watermark-herospath-2::before {
+  content: "\e9fa";
+}
+.mg-watermark-herospath-3::before {
+  content: "\e9fb";
+}
+.mg-watermark-herospath-4::before {
+  content: "\e9fc";
+}
+.mg-watermark-herospath-5::before {
+  content: "\e9fd";
+}
+.mg-watermark-herospath-6::before {
+  content: "\e9fe";
+}
+.mg-watermark-herospath-7::before {
+  content: "\e9ff";
+}
+.mg-watermark-herospath-8::before {
+  content: "\ea00";
+}
+.mg-watermark-herospath-9::before {
+  content: "\ea01";
+}
+.mg-watermark-japanjunior::before {
+  content: "\ea24";
+}
+.mg-watermark-judgeacademy::before {
+  content: "\ea13";
+}
+.mg-watermark-junior::before {
+  content: "\ea23";
+}
+.mg-watermark-juniorapac::before {
+  content: "\ea21";
+}
+.mg-watermark-junioreurope::before {
+  content: "\ea22";
+}
+.mg-watermark-leagueofdastardlydoom::before {
+  content: "\ea0b";
+}
+.mg-watermark-maestros::before {
+  content: "\ea0f";
+}
+.mg-watermark-mirran::before {
+  content: "\ea03";
+}
+.mg-watermark-mps::before {
+  content: "\ea1a";
+}
+.mg-watermark-mtg::before {
+  content: "\e9ed";
+}
+.mg-watermark-mtg10::before {
+  content: "\e9ee";
+}
+.mg-watermark-mtg15::before {
+  content: "\e9ef";
+}
+.mg-watermark-nerf::before {
+  content: "\ea19";
+}
+.mg-watermark-obscura::before {
+  content: "\ea10";
+}
+.mg-watermark-orderofthewidget::before {
+  content: "\ea0c";
+}
+.mg-watermark-protour::before {
+  content: "\ea26";
+}
+.mg-watermark-riveteers::before {
+  content: "\ea11";
+}
+.mg-watermark-scholarship::before {
+  content: "\ea25";
+}
+.mg-watermark-transformers::before {
+  content: "\ea18";
+}
+.mg-watermark-trumpkatsumai::before {
+  content: "\ea2b";
+}
+.mg-watermark-wotc::before {
+  content: "\ea1b";
+}
+.mg-watermark-wpn::before {
+  content: "\ea1c";
+}
+
+.mg-cost {
+  background-color: #beb9b2;
+  border-radius: 1em;
+  color: #111;
+  font-size: 0.95em;
+  width: 1.3em;
+  height: 1.3em;
+  line-height: 1.35em;
+  text-align: center;
+}
+.mg-cost.mg-w, .mg-cost.mg-wp {
+  background-color: #f0f2c0;
+}
+.mg-cost.mg-u, .mg-cost.mg-up {
+  background-color: #b5cde3;
+}
+.mg-cost.mg-b, .mg-cost.mg-bp {
+  background-color: #aca29a;
+}
+.mg-cost.mg-r, .mg-cost.mg-rp {
+  background-color: #db8664;
+}
+.mg-cost.mg-g, .mg-cost.mg-gp {
+  background-color: #93b483;
+}
+.mg-cost.mg-wu, .mg-cost.mg-wb, .mg-cost.mg-ub, .mg-cost.mg-ur, .mg-cost.mg-br, .mg-cost.mg-bg, .mg-cost.mg-rw, .mg-cost.mg-rg, .mg-cost.mg-gw, .mg-cost.mg-gu, .mg-cost.mg-2w, .mg-cost.mg-2u, .mg-cost.mg-2b, .mg-cost.mg-2r, .mg-cost.mg-2g, .mg-cost.mg-cw, .mg-cost.mg-cu, .mg-cost.mg-cb, .mg-cost.mg-cr, .mg-cost.mg-cg, .mg-cost.mg-wup, .mg-cost.mg-wbp, .mg-cost.mg-ubp, .mg-cost.mg-urp, .mg-cost.mg-brp, .mg-cost.mg-bgp, .mg-cost.mg-rwp, .mg-cost.mg-rgp, .mg-cost.mg-gwp, .mg-cost.mg-gup {
+  --mg-split-top: var(--mg-mana-c);
+  --mg-split-bottom: var(--mg-mana-u);
+  background: var(--mg-split-top);
+  background: -moz-linear-gradient(135deg, var(--mg-split-top) 0%, var(--mg-split-top) 50%, var(--mg-split-bottom) 50%, var(--mg-split-bottom) 100%);
+  background: -webkit-linear-gradient(135deg, var(--mg-split-top) 0%, var(--mg-split-top) 50%, var(--mg-split-bottom) 50%, var(--mg-split-bottom) 100%);
+  background: linear-gradient(135deg, var(--mg-split-top) 0%, var(--mg-split-top) 50%, var(--mg-split-bottom) 50%, var(--mg-split-bottom) 100%);
+  position: relative;
+  width: 1.3em;
+  height: 1.3em;
+}
+.mg-cost.mg-wu::before, .mg-cost.mg-wu::after, .mg-cost.mg-wb::before, .mg-cost.mg-wb::after, .mg-cost.mg-ub::before, .mg-cost.mg-ub::after, .mg-cost.mg-ur::before, .mg-cost.mg-ur::after, .mg-cost.mg-br::before, .mg-cost.mg-br::after, .mg-cost.mg-bg::before, .mg-cost.mg-bg::after, .mg-cost.mg-rw::before, .mg-cost.mg-rw::after, .mg-cost.mg-rg::before, .mg-cost.mg-rg::after, .mg-cost.mg-gw::before, .mg-cost.mg-gw::after, .mg-cost.mg-gu::before, .mg-cost.mg-gu::after, .mg-cost.mg-2w::before, .mg-cost.mg-2w::after, .mg-cost.mg-2u::before, .mg-cost.mg-2u::after, .mg-cost.mg-2b::before, .mg-cost.mg-2b::after, .mg-cost.mg-2r::before, .mg-cost.mg-2r::after, .mg-cost.mg-2g::before, .mg-cost.mg-2g::after, .mg-cost.mg-cw::before, .mg-cost.mg-cw::after, .mg-cost.mg-cu::before, .mg-cost.mg-cu::after, .mg-cost.mg-cb::before, .mg-cost.mg-cb::after, .mg-cost.mg-cr::before, .mg-cost.mg-cr::after, .mg-cost.mg-cg::before, .mg-cost.mg-cg::after, .mg-cost.mg-wup::before, .mg-cost.mg-wup::after, .mg-cost.mg-wbp::before, .mg-cost.mg-wbp::after, .mg-cost.mg-ubp::before, .mg-cost.mg-ubp::after, .mg-cost.mg-urp::before, .mg-cost.mg-urp::after, .mg-cost.mg-brp::before, .mg-cost.mg-brp::after, .mg-cost.mg-bgp::before, .mg-cost.mg-bgp::after, .mg-cost.mg-rwp::before, .mg-cost.mg-rwp::after, .mg-cost.mg-rgp::before, .mg-cost.mg-rgp::after, .mg-cost.mg-gwp::before, .mg-cost.mg-gwp::after, .mg-cost.mg-gup::before, .mg-cost.mg-gup::after {
+  font-size: 0.55em !important;
+  position: absolute;
+}
+.mg-cost.mg-wu::before, .mg-cost.mg-wb::before, .mg-cost.mg-ub::before, .mg-cost.mg-ur::before, .mg-cost.mg-br::before, .mg-cost.mg-bg::before, .mg-cost.mg-rw::before, .mg-cost.mg-rg::before, .mg-cost.mg-gw::before, .mg-cost.mg-gu::before, .mg-cost.mg-2w::before, .mg-cost.mg-2u::before, .mg-cost.mg-2b::before, .mg-cost.mg-2r::before, .mg-cost.mg-2g::before, .mg-cost.mg-cw::before, .mg-cost.mg-cu::before, .mg-cost.mg-cb::before, .mg-cost.mg-cr::before, .mg-cost.mg-cg::before, .mg-cost.mg-wup::before, .mg-cost.mg-wbp::before, .mg-cost.mg-ubp::before, .mg-cost.mg-urp::before, .mg-cost.mg-brp::before, .mg-cost.mg-bgp::before, .mg-cost.mg-rwp::before, .mg-cost.mg-rgp::before, .mg-cost.mg-gwp::before, .mg-cost.mg-gup::before {
+  top: -0.38em;
+  left: 0.28em;
+}
+.mg-cost.mg-wu::after, .mg-cost.mg-wb::after, .mg-cost.mg-ub::after, .mg-cost.mg-ur::after, .mg-cost.mg-br::after, .mg-cost.mg-bg::after, .mg-cost.mg-rw::after, .mg-cost.mg-rg::after, .mg-cost.mg-gw::after, .mg-cost.mg-gu::after, .mg-cost.mg-2w::after, .mg-cost.mg-2u::after, .mg-cost.mg-2b::after, .mg-cost.mg-2r::after, .mg-cost.mg-2g::after, .mg-cost.mg-cw::after, .mg-cost.mg-cu::after, .mg-cost.mg-cb::after, .mg-cost.mg-cr::after, .mg-cost.mg-cg::after, .mg-cost.mg-wup::after, .mg-cost.mg-wbp::after, .mg-cost.mg-ubp::after, .mg-cost.mg-urp::after, .mg-cost.mg-brp::after, .mg-cost.mg-bgp::after, .mg-cost.mg-rwp::after, .mg-cost.mg-rgp::after, .mg-cost.mg-gwp::after, .mg-cost.mg-gup::after {
+  top: 0.5em;
+  left: 1em;
+}
+.mg-cost.mg-wu, .mg-cost.mg-wup {
+  --mg-split-top: var(--mg-mana-w);
+}
+.mg-cost.mg-wb, .mg-cost.mg-wbp {
+  --mg-split-top: var(--mg-mana-w);
+  --mg-split-bottom: var(--mg-mana-b);
+}
+.mg-cost.mg-ub, .mg-cost.mg-ubp {
+  --mg-split-top: var(--mg-mana-u);
+  --mg-split-bottom: var(--mg-mana-b);
+}
+.mg-cost.mg-ur, .mg-cost.mg-urp {
+  --mg-split-top: var(--mg-mana-u);
+  --mg-split-bottom: var(--mg-mana-r);
+}
+.mg-cost.mg-br, .mg-cost.mg-brp {
+  --mg-split-top: var(--mg-mana-b);
+  --mg-split-bottom: var(--mg-mana-r);
+}
+.mg-cost.mg-bg, .mg-cost.mg-bgp {
+  --mg-split-top: var(--mg-mana-b);
+  --mg-split-bottom: var(--mg-mana-g);
+}
+.mg-cost.mg-rw, .mg-cost.mg-rwp {
+  --mg-split-top: var(--mg-mana-r);
+  --mg-split-bottom: var(--mg-mana-w);
+}
+.mg-cost.mg-rg, .mg-cost.mg-rgp {
+  --mg-split-top: var(--mg-mana-r);
+  --mg-split-bottom: var(--mg-mana-g);
+}
+.mg-cost.mg-gw, .mg-cost.mg-gwp {
+  --mg-split-top: var(--mg-mana-g);
+  --mg-split-bottom: var(--mg-mana-w);
+}
+.mg-cost.mg-gu, .mg-cost.mg-gup {
+  --mg-split-top: var(--mg-mana-g);
+}
+.mg-cost.mg-2w, .mg-cost.mg-cw {
+  --mg-split-bottom: var(--mg-mana-w);
+}
+.mg-cost.mg-2b, .mg-cost.mg-cb {
+  --mg-split-bottom: var(--mg-mana-b);
+}
+.mg-cost.mg-2r, .mg-cost.mg-cr {
+  --mg-split-bottom: var(--mg-mana-r);
+}
+.mg-cost.mg-2g, .mg-cost.mg-cg {
+  --mg-split-bottom: var(--mg-mana-g);
+}
+.mg-cost.mg-p::before {
+  display: inline-block;
+  -moz-transform: scale(1.2, 1.2);
+  -webkit-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+}
+.mg-cost.mg-wp::before, .mg-cost.mg-up::before, .mg-cost.mg-bp::before, .mg-cost.mg-rp::before, .mg-cost.mg-gp::before, .mg-cost.mg-cw::before, .mg-cost.mg-cu::before, .mg-cost.mg-cb::before, .mg-cost.mg-cr::before, .mg-cost.mg-cg::before, .mg-cost.mg-wup::before, .mg-cost.mg-wbp::before, .mg-cost.mg-ubp::before, .mg-cost.mg-urp::before, .mg-cost.mg-brp::before, .mg-cost.mg-bgp::before, .mg-cost.mg-rwp::before, .mg-cost.mg-rgp::before, .mg-cost.mg-gwp::before, .mg-cost.mg-gup::before, .mg-cost.mg-wup::after, .mg-cost.mg-wbp::after, .mg-cost.mg-ubp::after, .mg-cost.mg-urp::after, .mg-cost.mg-brp::after, .mg-cost.mg-bgp::after, .mg-cost.mg-rwp::after, .mg-cost.mg-rgp::after, .mg-cost.mg-gwp::after, .mg-cost.mg-gup::after {
+  display: inline-block;
+  transform: scale(1.2) translateX(0.01rem) translateY(-0.03rem);
+}
+.mg-cost.mg-tap-alt::before {
+  display: inline-block;
+  transform: scale(1.2);
+  padding-left: 0.06em;
+  padding-bottom: 0.1em;
+}
+.mg-cost.mg-s::before {
+  color: #fff;
+  -webkit-text-stroke: 2px #fff;
+  font-size: 0.85em;
+  top: -0.05em;
+  position: relative;
+  display: inline-block;
+}
+.mg-cost.mg-s::after {
+  content: "\e619";
+  position: absolute;
+  color: #333;
+  margin-left: -0.9em;
+  font-size: 1.1em;
+}
+.mg-cost.mg-s-mtga::before {
+  color: #fff;
+}
+.mg-cost.mg-untap {
+  background-color: #111;
+  color: #fff;
+}
+.mg-cost.mg-shadow {
+  box-shadow: -0.06em 0.07em 0 #111, 0 0.06em 0 #111;
+}
+.mg-cost.mg-shadow.mg-untap {
+  box-shadow: -0.06em 0.07em 0 #fff, 0 0.06em 0 #fff;
+}
+
+.mg-split {
+  position: relative;
+  width: 1.3em;
+  height: 1.3em;
+}
+
+.mg-split::before,
+.mg-split::after {
+  font-size: 0.55em !important;
+  position: absolute;
+}
+
+.mg-split::before {
+  top: -0.38em;
+  left: 0.28em;
+}
+
+.mg-split::after {
+  top: 0.5em;
+  left: 1em;
+}
+
+span.mg-half {
+  width: 0.675em;
+  overflow: hidden;
+  display: inline-block;
+  margin-left: 0.675em;
+}
+span.mg-half > .mg-cost {
+  margin-left: -0.675em;
+}
+
+.mg-half {
+  width: 0.675em;
+  margin-left: 0.675em;
+  overflow: hidden;
+  border-radius: 0 1em 1em 0;
+}
+.mg-half::before {
+  margin-left: -0.65em;
+}
+
+.mg-100 {
+  width: 2.4em;
+}
+
+.mg-1000000 {
+  width: 5.4em;
+}
+
+/**
+ * planeswalker and other loyalty symbols */
+.mg-loyalty-up, .mg-loyalty-down, .mg-loyalty-zero, .mg-loyalty-start {
+  color: #111;
+  font-size: 1.5em;
+  position: relative;
+  text-align: center;
+}
+.mg-loyalty-start {
+  font-size: 2em;
+}
+.mg-loyalty-zero::after {
+  line-height: 2.1em !important;
+}
+.mg-loyalty-0::after, .mg-loyalty-1::after, .mg-loyalty-2::after, .mg-loyalty-3::after, .mg-loyalty-4::after, .mg-loyalty-5::after, .mg-loyalty-6::after, .mg-loyalty-7::after, .mg-loyalty-8::after, .mg-loyalty-9::after, .mg-loyalty-10::after, .mg-loyalty-11::after, .mg-loyalty-12::after, .mg-loyalty-13::after, .mg-loyalty-14::after, .mg-loyalty-15::after, .mg-loyalty-16::after, .mg-loyalty-17::after, .mg-loyalty-18::after, .mg-loyalty-19::after, .mg-loyalty-20::after, .mg-loyalty-25::after, .mg-loyalty-x::after {
+  color: #fff;
+  display: inline-block;
+  font-size: 0.5em;
+  font-family: "MPlantin, Garamond, Palatino, 'Times New Roman', Times, serif";
+  position: absolute;
+  left: 0;
+  line-height: 2.25em;
+  width: 100%;
+  text-align: center;
+}
+.mg-loyalty-0::after {
+  content: "0";
+}
+.mg-loyalty-up.mg-loyalty-1::after {
+  content: "+1";
+}
+.mg-loyalty-up.mg-loyalty-2::after {
+  content: "+2";
+}
+.mg-loyalty-up.mg-loyalty-3::after {
+  content: "+3";
+}
+.mg-loyalty-up.mg-loyalty-4::after {
+  content: "+4";
+}
+.mg-loyalty-up.mg-loyalty-5::after {
+  content: "+5";
+}
+.mg-loyalty-up.mg-loyalty-6::after {
+  content: "+6";
+}
+.mg-loyalty-up.mg-loyalty-7::after {
+  content: "+7";
+}
+.mg-loyalty-up.mg-loyalty-8::after {
+  content: "+8";
+}
+.mg-loyalty-up.mg-loyalty-9::after {
+  content: "+9";
+}
+.mg-loyalty-up.mg-loyalty-10::after {
+  content: "+10";
+}
+.mg-loyalty-up.mg-loyalty-11::after {
+  content: "+10";
+}
+.mg-loyalty-up.mg-loyalty-12::after {
+  content: "+12";
+}
+.mg-loyalty-up.mg-loyalty-13::after {
+  content: "+13";
+}
+.mg-loyalty-up.mg-loyalty-14::after {
+  content: "+14";
+}
+.mg-loyalty-up.mg-loyalty-15::after {
+  content: "+15";
+}
+.mg-loyalty-up.mg-loyalty-16::after {
+  content: "+16";
+}
+.mg-loyalty-up.mg-loyalty-17::after {
+  content: "+17";
+}
+.mg-loyalty-up.mg-loyalty-18::after {
+  content: "+18";
+}
+.mg-loyalty-up.mg-loyalty-19::after {
+  content: "+19";
+}
+.mg-loyalty-up.mg-loyalty-20::after {
+  content: "+20";
+}
+.mg-loyalty-up.mg-loyalty-25::after {
+  content: "+25";
+}
+.mg-loyalty-up.mg-loyalty-x::after {
+  content: "+X";
+}
+.mg-loyalty-start.mg-loyalty-1::after {
+  content: "1";
+}
+.mg-loyalty-start.mg-loyalty-2::after {
+  content: "2";
+}
+.mg-loyalty-start.mg-loyalty-3::after {
+  content: "3";
+}
+.mg-loyalty-start.mg-loyalty-4::after {
+  content: "4";
+}
+.mg-loyalty-start.mg-loyalty-5::after {
+  content: "5";
+}
+.mg-loyalty-start.mg-loyalty-6::after {
+  content: "6";
+}
+.mg-loyalty-start.mg-loyalty-7::after {
+  content: "7";
+}
+.mg-loyalty-start.mg-loyalty-8::after {
+  content: "8";
+}
+.mg-loyalty-start.mg-loyalty-9::after {
+  content: "9";
+}
+.mg-loyalty-start.mg-loyalty-10::after {
+  content: "10";
+}
+.mg-loyalty-start.mg-loyalty-11::after {
+  content: "11";
+}
+.mg-loyalty-start.mg-loyalty-12::after {
+  content: "12";
+}
+.mg-loyalty-start.mg-loyalty-13::after {
+  content: "13";
+}
+.mg-loyalty-start.mg-loyalty-14::after {
+  content: "14";
+}
+.mg-loyalty-start.mg-loyalty-15::after {
+  content: "15";
+}
+.mg-loyalty-start.mg-loyalty-16::after {
+  content: "16";
+}
+.mg-loyalty-start.mg-loyalty-17::after {
+  content: "17";
+}
+.mg-loyalty-start.mg-loyalty-18::after {
+  content: "18";
+}
+.mg-loyalty-start.mg-loyalty-19::after {
+  content: "19";
+}
+.mg-loyalty-start.mg-loyalty-20::after {
+  content: "20";
+}
+.mg-loyalty-start.mg-loyalty-25::after {
+  content: "25";
+}
+.mg-loyalty-start.mg-loyalty-x::after {
+  content: "X";
+}
+.mg-loyalty-down::after {
+  line-height: 2em;
+}
+.mg-loyalty-down.mg-loyalty-1::after {
+  content: "-1";
+}
+.mg-loyalty-down.mg-loyalty-2::after {
+  content: "-2";
+}
+.mg-loyalty-down.mg-loyalty-3::after {
+  content: "-3";
+}
+.mg-loyalty-down.mg-loyalty-4::after {
+  content: "-4";
+}
+.mg-loyalty-down.mg-loyalty-5::after {
+  content: "-5";
+}
+.mg-loyalty-down.mg-loyalty-6::after {
+  content: "-6";
+}
+.mg-loyalty-down.mg-loyalty-7::after {
+  content: "-7";
+}
+.mg-loyalty-down.mg-loyalty-8::after {
+  content: "-8";
+}
+.mg-loyalty-down.mg-loyalty-9::after {
+  content: "-9";
+}
+.mg-loyalty-down.mg-loyalty-10::after {
+  content: "-10";
+}
+.mg-loyalty-down.mg-loyalty-11::after {
+  content: "-11";
+}
+.mg-loyalty-down.mg-loyalty-12::after {
+  content: "-12";
+}
+.mg-loyalty-down.mg-loyalty-13::after {
+  content: "-13";
+}
+.mg-loyalty-down.mg-loyalty-14::after {
+  content: "-14";
+}
+.mg-loyalty-down.mg-loyalty-15::after {
+  content: "-15";
+}
+.mg-loyalty-down.mg-loyalty-16::after {
+  content: "-16";
+}
+.mg-loyalty-down.mg-loyalty-17::after {
+  content: "-17";
+}
+.mg-loyalty-down.mg-loyalty-18::after {
+  content: "-18";
+}
+.mg-loyalty-down.mg-loyalty-19::after {
+  content: "-19";
+}
+.mg-loyalty-down.mg-loyalty-20::after {
+  content: "-20";
+}
+.mg-loyalty-down.mg-loyalty-25::after {
+  content: "-25";
+}
+.mg-loyalty-down.mg-loyalty-x::after {
+  content: "-X";
+}
+.mg-loyalty-outline::before {
+  color: transparent;
+  -webkit-text-stroke: 0.03em #111;
+}
+.mg-loyalty-outline::after {
+  color: #111;
+}
+.mg-loyalty-outline.mg-loyalty-start {
+  font-size: 1.6em;
+}
+
+.mg-saga {
+  color: #111;
+}
+.mg-saga-1::after, .mg-saga-2::after, .mg-saga-3::after, .mg-saga-4::after, .mg-saga-5::after, .mg-saga-6::after {
+  color: #fff;
+  display: inline-block;
+  font-size: 0.6em;
+  font-family: "MPlantin, Garamond, Palatino, 'Times New Roman', Times, serif";
+  position: absolute;
+  left: 0;
+  line-height: 2em;
+  width: 100%;
+  text-align: center;
+}
+.mg-saga-1::after {
+  content: "I";
+}
+.mg-saga-2::after {
+  content: "II";
+}
+.mg-saga-3::after {
+  content: "III";
+}
+.mg-saga-4::after {
+  content: "IV";
+}
+.mg-saga-5::after {
+  content: "V";
+}
+.mg-saga-6::after {
+  content: "VI";
+}
+
+.mg-level > span {
+  font-size: 0.33em;
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #000;
+  font-family: "MPlantin, Garamond, Palatino, 'Times New Roman', Times, serif";
+  width: 76%;
+  text-align: center;
+  line-height: 3.8;
+}
+.mg-level::after {
+  color: rgba(0, 0, 0, 0.25);
+  display: block;
+  font-size: 1em;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.mg-defense {
+  color: #111;
+  font-size: 1.5em;
+  position: relative;
+  text-align: center;
+}
+.mg-defense-0::after, .mg-defense-1::after, .mg-defense-2::after, .mg-defense-3::after, .mg-defense-4::after, .mg-defense-5::after, .mg-defense-6::after, .mg-defense-7::after, .mg-defense-8::after, .mg-defense-9::after, .mg-defense-10::after, .mg-defense-11::after, .mg-defense-12::after, .mg-defense-13::after, .mg-defense-14::after, .mg-defense-15::after, .mg-defense-16::after, .mg-defense-17::after, .mg-defense-18::after, .mg-defense-19::after, .mg-defense-20::after, .mg-defense-25::after, .mg-defense-x::after {
+  color: #fff;
+  display: inline-block;
+  font-size: 0.5em;
+  font-family: "MPlantin, Garamond, Palatino, 'Times New Roman', Times, serif";
+  position: absolute;
+  left: 0;
+  line-height: 2.25em;
+  width: 100%;
+  text-align: center;
+}
+.mg-defense-0::after {
+  content: "0";
+}
+.mg-defense-1::after {
+  content: "1";
+}
+.mg-defense-2::after {
+  content: "2";
+}
+.mg-defense-3::after {
+  content: "3";
+}
+.mg-defense-4::after {
+  content: "4";
+}
+.mg-defense-5::after {
+  content: "5";
+}
+.mg-defense-6::after {
+  content: "6";
+}
+.mg-defense-7::after {
+  content: "7";
+}
+.mg-defense-8::after {
+  content: "8";
+}
+.mg-defense-9::after {
+  content: "9";
+}
+.mg-defense-10::after {
+  content: "10";
+}
+.mg-defense-11::after {
+  content: "11";
+}
+.mg-defense-12::after {
+  content: "12";
+}
+.mg-defense-13::after {
+  content: "13";
+}
+.mg-defense-14::after {
+  content: "14";
+}
+.mg-defense-15::after {
+  content: "15";
+}
+.mg-defense-16::after {
+  content: "16";
+}
+.mg-defense-17::after {
+  content: "17";
+}
+.mg-defense-18::after {
+  content: "18";
+}
+.mg-defense-19::after {
+  content: "19";
+}
+.mg-defense-20::after {
+  content: "20";
+}
+.mg-defense-25::after {
+  content: "25";
+}
+.mg-defense-outline::before {
+  content: "\e9d8";
+}
+.mg-defense-outline::after {
+  color: #111;
+}
+.mg-defense-print {
+  display: list-item;
+  list-style-position: inside;
+  width: 0.9em;
+}
+.mg-defense-print::before {
+  color: #fff;
+  content: "\e9d8";
+  position: absolute;
+  left: 0;
+  top: 0;
+  text-shadow: 0 0 5px #333;
+}
+.mg-defense-print::marker {
+  content: "\e9d7";
+  color: #111;
+}
+
+.mg-dfc {
+  color: #111;
+  border: 0.05em solid #111;
+  border-radius: 2em;
+  padding: 0.025em;
+}
+
+.mg-2x {
+  font-size: 1.75em;
+}
+
+.mg-3x {
+  font-size: 2.25em;
+}
+
+.mg-4x {
+  font-size: 3em;
+}
+
+.mg-5x {
+  font-size: 3.75em;
+}
+
+.mg-6x {
+  font-size: 4.5em;
+}
+
+/*
+ * Fixed width */
+.mg-fw {
+  width: 1em;
+  text-align: center;
+}
+
+.mg-duo {
+  color: #fff;
+}
+.mg-duo::after {
+  color: #000;
+  content: "";
+  display: block;
+  font-size: 1em;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.mg-duo.mg-multicolor::after {
+  content: "\e986";
+}
+.mg-duo.mg-school-lorehold::after {
+  content: "\e99b";
+}
+.mg-duo.mg-school-prismari::after {
+  content: "\e99d";
+}
+.mg-duo.mg-school-quandrix::after {
+  content: "\e99f";
+}
+.mg-duo.mg-school-silverquill::after {
+  content: "\e9a1";
+}
+.mg-duo.mg-school-witherbloom::before {
+  content: "\e9a3";
+}
+.mg-duo.mg-school-witherbloom::after {
+  content: "\e9a4";
+}
+.mg-duo-color::before {
+  color: #010101;
+}
+.mg-duo-color.mg-multicolor::after {
+  color: #cca753;
+}
+.mg-duo-color.mg-multicolor.mg-grad::after {
+  background: linear-gradient(45deg, #cca54f 0%, #e0d3bb 50%, #cca54f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.mg-duo-color.mg-school-lorehold::before {
+  color: #a03731;
+}
+.mg-duo-color.mg-school-lorehold::after {
+  color: #e4e8c7;
+}
+.mg-duo-color.mg-school-prismari::before {
+  color: #a23431;
+}
+.mg-duo-color.mg-school-prismari::after {
+  color: #322f5c;
+}
+.mg-duo-color.mg-school-quandrix::before {
+  color: #352e5f;
+}
+.mg-duo-color.mg-school-quandrix::after {
+  color: #519e52;
+}
+.mg-duo-color.mg-school-silverquill::before {
+  color: #181616;
+}
+.mg-duo-color.mg-school-silverquill::after {
+  color: #e5e9ca;
+}
+.mg-duo-color.mg-school-witherbloom::before {
+  color: #2f312d;
+}
+.mg-duo-color.mg-school-witherbloom::after {
+  color: #4f9b4f;
+}
+
+.mg-ci {
+  border-radius: 100%;
+  box-shadow: inset 0 0 1px #fff;
+  line-height: 0.95em;
+  width: 1em;
+  height: 1em;
+}
+.mg-ci::before {
+  color: #010101;
+}
+.mg-ci-1::before {
+  content: "\e98a";
+}
+.mg-ci-2::before {
+  content: "\e98b";
+}
+.mg-ci-3::before {
+  content: "\e98c";
+}
+.mg-ci-4::before {
+  content: "\e98d";
+}
+.mg-ci-5::before {
+  content: "\e98e";
+}
+.mg-ci-w {
+  background: #fff;
+}
+.mg-ci-u {
+  background: #3b6ba0;
+}
+.mg-ci-b {
+  background: #383431;
+}
+.mg-ci-r {
+  background: #c6553e;
+}
+.mg-ci-g {
+  background: #3d684b;
+}
+.mg-ci-wu, .mg-ci-uw, .mg-ci-azorius {
+  background: conic-gradient(#fff 45deg, #3b6ba0 45deg 225deg, #fff 225deg);
+}
+.mg-ci-wb, .mg-ci-bw, .mg-ci-orzhov {
+  background: conic-gradient(#fff 45deg, #383431 45deg 225deg, #fff 225deg);
+}
+.mg-ci-ub, .mg-ci-bu, .mg-ci-dimir {
+  background: conic-gradient(#3b6ba0 45deg, #383431 45deg 225deg, #3b6ba0 225deg);
+}
+.mg-ci-ur, .mg-ci-ru, .mg-ci-izzet {
+  background: conic-gradient(#3b6ba0 45deg, #c6553e 45deg 225deg, #3b6ba0 225deg);
+}
+.mg-ci-bg, .mg-ci-gb, .mg-ci-golgari, .mg-ci-rock {
+  background: conic-gradient(#383431 45deg, #3d684b 45deg 225deg, #383431 225deg);
+}
+.mg-ci-br, .mg-ci-rb, .mg-ci-rakdos {
+  background: conic-gradient(#383431 45deg, #c6553e 45deg 225deg, #383431 225deg);
+}
+.mg-ci-rw, .mg-ci-wr, .mg-ci-boros {
+  background: conic-gradient(#c6553e 45deg, #fff 45deg 225deg, #c6553e 225deg);
+}
+.mg-ci-rg, .mg-ci-gr, .mg-ci-gruul {
+  background: conic-gradient(#c6553e 45deg, #3d684b 45deg 225deg, #c6553e 225deg);
+}
+.mg-ci-gu, .mg-ci-ug, .mg-ci-simic {
+  background: conic-gradient(#3d684b 45deg, #3b6ba0 45deg 225deg, #3d684b 225deg);
+}
+.mg-ci-gw, .mg-ci-wg, .mg-ci-selesnya {
+  background: conic-gradient(#3d684b 45deg, #fff 45deg 225deg, #3d684b 225deg);
+}
+.mg-ci-wug, .mg-ci-wgu, .mg-ci-ugw, .mg-ci-uwg, .mg-ci-gwu, .mg-ci-guw, .mg-ci-bant {
+  background: conic-gradient(#3b6ba0 60deg, #3d684b 60deg 180deg, #fff 180deg 300deg, #3b6ba0 300deg);
+}
+.mg-ci-ubw, .mg-ci-uwb, .mg-ci-buw, .mg-ci-bwu, .mg-ci-wub, .mg-ci-wbu, .mg-ci-esper {
+  background: conic-gradient(#383431 60deg, #fff 60deg 180deg, #3b6ba0 180deg 300deg, #383431 300deg);
+}
+.mg-ci-bru, .mg-ci-bur, .mg-ci-rbu, .mg-ci-rub, .mg-ci-ubr, .mg-ci-urb, .mg-ci-grixis {
+  background: conic-gradient(#c6553e 60deg, #3b6ba0 60deg 180deg, #383431 180deg 300deg, #c6553e 300deg);
+}
+.mg-ci-rgb, .mg-ci-rbg, .mg-ci-grb, .mg-ci-gbr, .mg-ci-brg, .mg-ci-bgr, .mg-ci-jund {
+  background: conic-gradient(#3d684b 60deg, #383431 60deg 180deg, #c6553e 180deg 300deg, #3d684b 300deg);
+}
+.mg-ci-gwr, .mg-ci-grw, .mg-ci-wgr, .mg-ci-wrg, .mg-ci-rgw, .mg-ci-rwg, .mg-ci-naya {
+  background: conic-gradient(#fff 60deg, #c6553e 60deg 180deg, #3d684b 180deg 300deg, #fff 300deg);
+}
+.mg-ci-wbg, .mg-ci-wgb, .mg-ci-bwg, .mg-ci-bgw, .mg-ci-gwb, .mg-ci-gbw, .mg-ci-abzan, .mg-ci-junk, .mg-ci-necra {
+  background: conic-gradient(#383431 60deg, #3d684b 60deg 180deg, #fff 180deg 300deg, #383431 300deg);
+}
+.mg-ci-urw, .mg-ci-uwr, .mg-ci-ruw, .mg-ci-rwu, .mg-ci-wur, .mg-ci-wru, .mg-ci-jeskai, .mg-ci-raka {
+  background: conic-gradient(#c6553e 60deg, #fff 60deg 180deg, #3b6ba0 180deg 300deg, #c6553e 300deg);
+}
+.mg-ci-bgu, .mg-ci-bug, .mg-ci-gbu, .mg-ci-gub, .mg-ci-ubg, .mg-ci-ugb, .mg-ci-sultai, .mg-ci-bug, .mg-ci-ana {
+  background: conic-gradient(#3d684b 60deg, #3b6ba0 60deg 180deg, #383431 180deg 300deg, #3d684b 300deg);
+}
+.mg-ci-rwb, .mg-ci-rbw, .mg-ci-wrb, .mg-ci-wbr, .mg-ci-brw, .mg-ci-bwr, .mg-ci-mardu, .mg-ci-dega {
+  background: conic-gradient(#fff 60deg, #383431 60deg 180deg, #c6553e 180deg 300deg, #fff 300deg);
+}
+.mg-ci-gur, .mg-ci-gru, .mg-ci-ugr, .mg-ci-urg, .mg-ci-rgu, .mg-ci-rug, .mg-ci-temur, .mg-ci-ceta {
+  background: conic-gradient(#3b6ba0 60deg, #c6553e 60deg 180deg, #3d684b 180deg 300deg, #3b6ba0 300deg);
+}
+.mg-ci-ubrg, .mg-ci-ubgr, .mg-ci-ugbr, .mg-ci-ugrb, .mg-ci-urbg, .mg-ci-urgb, .mg-ci-bgru, .mg-ci-bgur, .mg-ci-brgu, .mg-ci-brug, .mg-ci-bugr, .mg-ci-burg, .mg-ci-gbru, .mg-ci-gbur, .mg-ci-grbu, .mg-ci-grub, .mg-ci-gubr, .mg-ci-gurb, .mg-ci-rbgu, .mg-ci-rbug, .mg-ci-rgbu, .mg-ci-rgub, .mg-ci-rubg, .mg-ci-rugb, .mg-ci-glint {
+  background: conic-gradient(#3b6ba0 45deg, #383431 45deg 135deg, #c6553e 135deg 225deg, #3d684b 225deg 315deg, #3b6ba0 315deg);
+}
+.mg-ci-brgw, .mg-ci-bgrw, .mg-ci-bgwr, .mg-ci-brwg, .mg-ci-bwgr, .mg-ci-bwrg, .mg-ci-gbrw, .mg-ci-gbwr, .mg-ci-grbw, .mg-ci-grwb, .mg-ci-gwbr, .mg-ci-gwrb, .mg-ci-rbgw, .mg-ci-rbwg, .mg-ci-rgbw, .mg-ci-rgwb, .mg-ci-rwbg, .mg-ci-rwgb, .mg-ci-wbgr, .mg-ci-wbrg, .mg-ci-wgbr, .mg-ci-wgrb, .mg-ci-wrbg, .mg-ci-wrgb, .mg-ci-dune {
+  background: conic-gradient(#383431 45deg, #c6553e 45deg 135deg, #3d684b 135deg 225deg, #fff 225deg 315deg, #383431 315deg);
+}
+.mg-ci-rgwu, .mg-ci-gruw, .mg-ci-grwu, .mg-ci-gurw, .mg-ci-guwr, .mg-ci-gwru, .mg-ci-gwur, .mg-ci-rguw, .mg-ci-rugw, .mg-ci-ruwg, .mg-ci-rwgu, .mg-ci-rwug, .mg-ci-ugrw, .mg-ci-ugwr, .mg-ci-urgw, .mg-ci-urwg, .mg-ci-uwgr, .mg-ci-uwrg, .mg-ci-wgru, .mg-ci-wgur, .mg-ci-wrgu, .mg-ci-wrug, .mg-ci-wugr, .mg-ci-wurg, .mg-ci-ink {
+  background: conic-gradient(#c6553e 45deg, #3d684b 45deg 135deg, #fff 135deg 225deg, #3b6ba0 225deg 315deg, #c6553e 315deg);
+}
+.mg-ci-gwub, .mg-ci-bguw, .mg-ci-bgwu, .mg-ci-bugw, .mg-ci-buwg, .mg-ci-bwgu, .mg-ci-bwug, .mg-ci-gbuw, .mg-ci-gbwu, .mg-ci-gubw, .mg-ci-guwb, .mg-ci-gwbu, .mg-ci-ubgw, .mg-ci-ubwg, .mg-ci-ugbw, .mg-ci-ugwb, .mg-ci-uwbg, .mg-ci-uwgb, .mg-ci-wbgu, .mg-ci-wbug, .mg-ci-wgbu, .mg-ci-wgub, .mg-ci-wubg, .mg-ci-wugb, .mg-ci-witch {
+  background: conic-gradient(#3d684b 45deg, #fff 45deg 135deg, #3b6ba0 135deg 225deg, #383431 225deg 315deg, #3d684b 315deg);
+}
+.mg-ci-wubr, .mg-ci-bruw, .mg-ci-brwu, .mg-ci-burw, .mg-ci-buwr, .mg-ci-bwru, .mg-ci-bwur, .mg-ci-rbuw, .mg-ci-rbwu, .mg-ci-rubw, .mg-ci-ruwb, .mg-ci-rwbu, .mg-ci-rwub, .mg-ci-ubrw, .mg-ci-ubwr, .mg-ci-urbw, .mg-ci-urwb, .mg-ci-uwbr, .mg-ci-uwrb, .mg-ci-wbru, .mg-ci-wbur, .mg-ci-wrbu, .mg-ci-wrub, .mg-ci-wurb, .mg-ci-yore {
+  background: conic-gradient(#fff 45deg, #3b6ba0 45deg 135deg, #383431 135deg 225deg, #c6553e 225deg 315deg, #fff 315deg);
+}
+.mg-ci-wubrg, .mg-ci-bgruw, .mg-ci-bgrwu, .mg-ci-bgurw, .mg-ci-bguwr, .mg-ci-bgwru, .mg-ci-bgwur, .mg-ci-brguw, .mg-ci-brgwu, .mg-ci-brugw, .mg-ci-bruwg, .mg-ci-brwgu, .mg-ci-brwug, .mg-ci-bugrw, .mg-ci-bugwr, .mg-ci-burgw, .mg-ci-burwg, .mg-ci-buwgr, .mg-ci-buwrg, .mg-ci-bwgru, .mg-ci-bwgur, .mg-ci-bwrgu, .mg-ci-bwrug, .mg-ci-bwugr, .mg-ci-bwurg, .mg-ci-gbruw, .mg-ci-gbrwu, .mg-ci-gburw, .mg-ci-gbuwr, .mg-ci-gbwru, .mg-ci-gbwur, .mg-ci-grbuw, .mg-ci-grbwu, .mg-ci-grubw, .mg-ci-gruwb, .mg-ci-grwbu, .mg-ci-grwub, .mg-ci-gubrw, .mg-ci-gubwr, .mg-ci-gurbw, .mg-ci-gurwb, .mg-ci-guwbr, .mg-ci-guwrb, .mg-ci-gwbru, .mg-ci-gwbur, .mg-ci-gwrbu, .mg-ci-gwrub, .mg-ci-gwubr, .mg-ci-gwurb, .mg-ci-rbguw, .mg-ci-rbgwu, .mg-ci-rbugw, .mg-ci-rbuwg, .mg-ci-rbwgu, .mg-ci-rbwug, .mg-ci-rgbuw, .mg-ci-rgbwu, .mg-ci-rgubw, .mg-ci-rguwb, .mg-ci-rgwbu, .mg-ci-rgwub, .mg-ci-rubgw, .mg-ci-rubwg, .mg-ci-rugbw, .mg-ci-rugwb, .mg-ci-ruwbg, .mg-ci-ruwgb, .mg-ci-rwbgu, .mg-ci-rwbug, .mg-ci-rwgbu, .mg-ci-rwgub, .mg-ci-rwubg, .mg-ci-rwugb, .mg-ci-ubgrw, .mg-ci-ubgwr, .mg-ci-ubrgw, .mg-ci-ubrwg, .mg-ci-ubwgr, .mg-ci-ubwrg, .mg-ci-ugbrw, .mg-ci-ugbwr, .mg-ci-ugrbw, .mg-ci-ugrwb, .mg-ci-ugwbr, .mg-ci-ugwrb, .mg-ci-urbgw, .mg-ci-urbwg, .mg-ci-urgbw, .mg-ci-urgwb, .mg-ci-urwbg, .mg-ci-urwgb, .mg-ci-uwbgr, .mg-ci-uwbrg, .mg-ci-uwgbr, .mg-ci-uwgrb, .mg-ci-uwrbg, .mg-ci-uwrgb, .mg-ci-wbgru, .mg-ci-wbgur, .mg-ci-wbrgu, .mg-ci-wbrug, .mg-ci-wbugr, .mg-ci-wburg, .mg-ci-wgbru, .mg-ci-wgbur, .mg-ci-wgrbu, .mg-ci-wgrub, .mg-ci-wgubr, .mg-ci-wgurb, .mg-ci-wrbgu, .mg-ci-wrbug, .mg-ci-wrgbu, .mg-ci-wrgub, .mg-ci-wrubg, .mg-ci-wrugb, .mg-ci-wubgr, .mg-ci-wugbr, .mg-ci-wugrb, .mg-ci-wurbg, .mg-ci-wurgb, .mg-ci-5 {
+  background: conic-gradient(#fff 36deg, #3b6ba0 36deg 108deg, #383431 108deg 180deg, #c6553e 180deg 252deg, #3d684b 252deg 324deg, #fff 324deg);
+}
+
+.mg-mechanic {
+  background: linear-gradient(0deg, #c8913b 0%, #ecc65a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/*# sourceMappingURL=mana.css.map */

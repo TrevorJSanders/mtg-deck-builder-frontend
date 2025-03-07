@@ -1,0 +1,26 @@
+// base variables
+$mg-font-path: '../fonts' !default;
+$mg-version: '1.18.0' !default;
+$mg-font-size-base: 14px !default;
+$mg-prefix: mg !default;
+$mg-serif-font: 'MPlantin, Garamond, Palatino, \'Times New Roman\', Times, serif' !default;
+$mg-phyrexian-h: false !default;
+
+// mana colors
+$mg-border-black: #010101;
+$mg-base-colorless: #beb9b2;
+$mg-base-white: #f0f2c0;
+$mg-base-blue: #b5cde3;
+$mg-base-black: #aca29a;
+$mg-base-red: #db8664;
+$mg-base-green: #93b483;
+$mg-white: #fff;
+$mg-blue: #3b6ba0;
+$mg-black: #383431;
+$mg-red: #c6553e;
+$mg-green: #3d684b;
+
+// project colors
+$mg-multicolor-flat: #cca753;
+$mg-multicolor-grad: linear-gradient(45deg, #cca54f 0%, #e0d3bb 50%, #cca54f 100%);
+$mg-ability-grad: linear-gradient(0deg, #c8913b 0%, #ecc65a 100%);

@@ -1,0 +1,25 @@
+@use "variables";
+
+// fonts
+
+@font-face {
+    font-family: 'Mana';
+    src:url( '#{variables.$mg-font-path}/mana.eot?v=#{variables.$mg-version}' );
+    src:url( '#{variables.$mg-font-path}/mana.eot?#iefix&v=#{variables.$mg-version}') format( 'embedded-opentype' ),
+        url( '#{variables.$mg-font-path}/mana.woff?v=#{variables.$mg-version}') format( 'woff' ),
+        url( '#{variables.$mg-font-path}/mana.ttf?v=#{variables.$mg-version}') format( 'truetype' ),
+        url( '#{variables.$mg-font-path}/mana.svg?v=#{variables.$mg-version}#mana') format( 'svg' );
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MPlantin';
+    src:url( '#{variables.$mg-font-path}/mplantin.eot?v=#{variables.$mg-version}' );
+    src:url( '#{variables.$mg-font-path}/mplantin.eot?#iefix&v=#{variables.$mg-version}') format( 'embedded-opentype' ),
+        url( '#{variables.$mg-font-path}/mplantin.woff?v=#{variables.$mg-version}') format( 'woff' ),
+        url( '#{variables.$mg-font-path}/mplantin.ttf?v=#{variables.$mg-version}') format( 'truetype' ),
+        url( '#{variables.$mg-font-path}/mplantin.svg?v=#{variables.$mg-version}#mplantin') format( 'svg' );
+    font-weight: normal;
+    font-style: normal;
+}

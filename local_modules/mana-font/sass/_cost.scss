@@ -1,0 +1,313 @@
+@use "variables";
+
+// costs
+
+.#{variables.$mg-prefix}-cost {
+
+    background-color: variables.$mg-base-colorless;
+    border-radius: 1em;
+    color: #111;
+    font-size: 0.95em;
+    width: 1.3em;
+    height: 1.3em;
+    line-height: 1.35em;
+    text-align: center;
+
+    // single costs
+    &.#{variables.$mg-prefix}-w,
+    &.#{variables.$mg-prefix}-wp {
+        background-color: variables.$mg-base-white;
+    }
+    &.#{variables.$mg-prefix}-u,
+    &.#{variables.$mg-prefix}-up {
+        background-color: variables.$mg-base-blue;
+    }
+    &.#{variables.$mg-prefix}-b,
+    &.#{variables.$mg-prefix}-bp {
+        background-color: variables.$mg-base-black;
+    }
+    &.#{variables.$mg-prefix}-r,
+    &.#{variables.$mg-prefix}-rp {
+        background-color: variables.$mg-base-red;
+    }
+    &.#{variables.$mg-prefix}-g,
+    &.#{variables.$mg-prefix}-gp {
+        background-color: variables.$mg-base-green;
+    }
+
+    // split costs
+    &.#{variables.$mg-prefix}-wu,
+    &.#{variables.$mg-prefix}-wb,
+    &.#{variables.$mg-prefix}-ub,
+    &.#{variables.$mg-prefix}-ur,
+    &.#{variables.$mg-prefix}-br,
+    &.#{variables.$mg-prefix}-bg,
+    &.#{variables.$mg-prefix}-rw,
+    &.#{variables.$mg-prefix}-rg,
+    &.#{variables.$mg-prefix}-gw,
+    &.#{variables.$mg-prefix}-gu,
+    &.#{variables.$mg-prefix}-2w,
+    &.#{variables.$mg-prefix}-2u,
+    &.#{variables.$mg-prefix}-2b,
+    &.#{variables.$mg-prefix}-2r,
+    &.#{variables.$mg-prefix}-2g,
+    &.#{variables.$mg-prefix}-cw,
+    &.#{variables.$mg-prefix}-cu,
+    &.#{variables.$mg-prefix}-cb,
+    &.#{variables.$mg-prefix}-cr,
+    &.#{variables.$mg-prefix}-cg,
+    &.#{variables.$mg-prefix}-wup,
+    &.#{variables.$mg-prefix}-wbp,
+    &.#{variables.$mg-prefix}-ubp,
+    &.#{variables.$mg-prefix}-urp,
+    &.#{variables.$mg-prefix}-brp,
+    &.#{variables.$mg-prefix}-bgp,
+    &.#{variables.$mg-prefix}-rwp,
+    &.#{variables.$mg-prefix}-rgp,
+    &.#{variables.$mg-prefix}-gwp,
+    &.#{variables.$mg-prefix}-gup {
+        --mg-split-top: var(--mg-mana-c);
+        --mg-split-bottom: var(--mg-mana-u);
+        background: var(--mg-split-top); // fallback 
+        background: -moz-linear-gradient(135deg, var(--mg-split-top) 0%, var(--mg-split-top) 50%, var(--mg-split-bottom) 50%, var(--mg-split-bottom) 100%);
+        background: -webkit-linear-gradient(135deg, var(--mg-split-top) 0%, var(--mg-split-top) 50%, var(--mg-split-bottom) 50%, var(--mg-split-bottom) 100%);
+        background: linear-gradient(135deg, var(--mg-split-top) 0%, var(--mg-split-top) 50%, var(--mg-split-bottom) 50%, var(--mg-split-bottom) 100%);
+        position: relative;
+        width: 1.3em;
+        height: 1.3em;
+        &::before,
+        &::after {
+            font-size: 0.55em !important;
+            position: absolute;
+        }
+        &::before {
+            top: -0.38em;
+            left: 0.28em;
+        }
+        &::after {
+            top: 0.5em;
+            left: 1.0em;
+        }
+    }
+    &.#{variables.$mg-prefix}-wu,
+    &.#{variables.$mg-prefix}-wup {
+        --mg-split-top: var(--mg-mana-w);
+    }
+    &.#{variables.$mg-prefix}-wb,
+    &.#{variables.$mg-prefix}-wbp {
+        --mg-split-top: var(--mg-mana-w);
+        --mg-split-bottom: var(--mg-mana-b);
+    }
+    &.#{variables.$mg-prefix}-ub,
+    &.#{variables.$mg-prefix}-ubp {
+        --mg-split-top: var(--mg-mana-u);
+        --mg-split-bottom: var(--mg-mana-b);
+    }
+    &.#{variables.$mg-prefix}-ur,
+    &.#{variables.$mg-prefix}-urp {
+        --mg-split-top: var(--mg-mana-u);
+        --mg-split-bottom: var(--mg-mana-r);
+    }
+    &.#{variables.$mg-prefix}-br,
+    &.#{variables.$mg-prefix}-brp {
+        --mg-split-top: var(--mg-mana-b);
+        --mg-split-bottom: var(--mg-mana-r);
+    }
+    &.#{variables.$mg-prefix}-bg,
+    &.#{variables.$mg-prefix}-bgp {
+        --mg-split-top: var(--mg-mana-b);
+        --mg-split-bottom: var(--mg-mana-g);
+    }
+    &.#{variables.$mg-prefix}-rw,
+    &.#{variables.$mg-prefix}-rwp {
+        --mg-split-top: var(--mg-mana-r);
+        --mg-split-bottom: var(--mg-mana-w);
+    }
+    &.#{variables.$mg-prefix}-rg,
+    &.#{variables.$mg-prefix}-rgp {
+        --mg-split-top: var(--mg-mana-r);
+        --mg-split-bottom: var(--mg-mana-g);
+    }
+    &.#{variables.$mg-prefix}-gw,
+    &.#{variables.$mg-prefix}-gwp {
+        --mg-split-top: var(--mg-mana-g);
+        --mg-split-bottom: var(--mg-mana-w);
+    }
+    &.#{variables.$mg-prefix}-gu,
+    &.#{variables.$mg-prefix}-gup {
+        --mg-split-top: var(--mg-mana-g);
+    }
+    &.#{variables.$mg-prefix}-2w,
+    &.#{variables.$mg-prefix}-cw {
+        --mg-split-bottom: var(--mg-mana-w);
+    }
+    &.#{variables.$mg-prefix}-2u,
+    &.#{variables.$mg-prefix}-cu {
+        // defaults
+    }
+    &.#{variables.$mg-prefix}-2b,
+    &.#{variables.$mg-prefix}-cb {
+        --mg-split-bottom: var(--mg-mana-b);
+    }
+    &.#{variables.$mg-prefix}-2r,
+    &.#{variables.$mg-prefix}-cr {
+        --mg-split-bottom: var(--mg-mana-r);
+    }
+    &.#{variables.$mg-prefix}-2g,
+    &.#{variables.$mg-prefix}-cg {
+        --mg-split-bottom: var(--mg-mana-g);
+    }
+
+    // new tan: #d0c6bb
+
+    // phyrexian and other split mana size increases
+    @if variables.$mg-phyrexian-h {
+      &.#{variables.$mg-prefix}-h::before {
+        display: inline-block;
+        -moz-transform: scale( 1.2, 1.2 );
+        -webkit-transform: scale( 1.2, 1.2 );
+        transform: scale( 1.2, 1.2 );
+      }
+    } @else {
+      &.#{variables.$mg-prefix}-p::before {
+        display: inline-block;
+        -moz-transform: scale( 1.2, 1.2 );
+        -webkit-transform: scale( 1.2, 1.2 );
+        transform: scale( 1.2, 1.2 );
+      }
+    }
+    &.#{variables.$mg-prefix}-wp::before,
+    &.#{variables.$mg-prefix}-up::before,
+    &.#{variables.$mg-prefix}-bp::before,
+    &.#{variables.$mg-prefix}-rp::before,
+    &.#{variables.$mg-prefix}-gp::before,
+    &.#{variables.$mg-prefix}-cw::before,
+    &.#{variables.$mg-prefix}-cu::before,
+    &.#{variables.$mg-prefix}-cb::before,
+    &.#{variables.$mg-prefix}-cr::before,
+    &.#{variables.$mg-prefix}-cg::before,
+    &.#{variables.$mg-prefix}-wup::before,
+    &.#{variables.$mg-prefix}-wbp::before,
+    &.#{variables.$mg-prefix}-ubp::before,
+    &.#{variables.$mg-prefix}-urp::before,
+    &.#{variables.$mg-prefix}-brp::before,
+    &.#{variables.$mg-prefix}-bgp::before,
+    &.#{variables.$mg-prefix}-rwp::before,
+    &.#{variables.$mg-prefix}-rgp::before,
+    &.#{variables.$mg-prefix}-gwp::before,
+    &.#{variables.$mg-prefix}-gup::before,
+    &.#{variables.$mg-prefix}-wup::after,
+    &.#{variables.$mg-prefix}-wbp::after,
+    &.#{variables.$mg-prefix}-ubp::after,
+    &.#{variables.$mg-prefix}-urp::after,
+    &.#{variables.$mg-prefix}-brp::after,
+    &.#{variables.$mg-prefix}-bgp::after,
+    &.#{variables.$mg-prefix}-rwp::after,
+    &.#{variables.$mg-prefix}-rgp::after,
+    &.#{variables.$mg-prefix}-gwp::after,
+    &.#{variables.$mg-prefix}-gup::after {
+        display: inline-block;
+        transform: scale(1.2) translateX(0.01rem) translateY(-0.03rem);
+    }
+
+    // alternate tap
+    &.#{variables.$mg-prefix}-tap-alt::before {
+        display: inline-block;
+        transform: scale(1.2);
+        padding-left: .06em;
+        padding-bottom: 0.10em;
+    }
+
+    // snow mana
+    &.#{variables.$mg-prefix}-s {
+        &::before {
+            color: #fff;
+            -webkit-text-stroke: 2px #fff;
+            font-size: 0.85em;
+            top: -0.05em;
+            position: relative;
+            display: inline-block;
+        }
+        &::after {
+            //text-shadow: -1px 1px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, 1px 1px 0 #fff;
+            content: "\e619";
+            position: absolute;
+            color: #333;
+            margin-left: -0.9em;
+            font-size: 1.1em;
+        }
+        &-mtga::before {
+            color: #fff;
+        }
+    }
+
+    // tap symbols
+    &.#{variables.$mg-prefix}-untap {
+        background-color: #111;
+        color: #fff;
+    }
+
+    // shadow alternative
+    &.#{variables.$mg-prefix}-shadow {
+        box-shadow: -0.06em 0.07em 0 #111, 0 0.06em 0 #111;
+        &.#{variables.$mg-prefix}-untap {
+            box-shadow: -0.06em 0.07em 0 #fff, 0 0.06em 0 #fff;
+        }
+    }
+}
+
+
+// split cost specifics
+
+.#{variables.$mg-prefix}-split {
+    position: relative;
+    width: 1.3em;
+    height: 1.3em;
+}
+.#{variables.$mg-prefix}-split::before,
+.#{variables.$mg-prefix}-split::after {
+    font-size: 0.55em !important;
+    position: absolute;
+}
+.#{variables.$mg-prefix}-split::before {
+    top: -0.38em;
+    left: 0.28em;
+}
+.#{variables.$mg-prefix}-split::after {
+    top: 0.5em;
+    left: 1.0em;
+}
+
+
+// half costs specifics
+
+span.#{variables.$mg-prefix}-half { // legacy handling with <span> tag
+    width: .675em;
+    overflow: hidden;
+    display: inline-block;
+    margin-left: .675em;
+
+    > .#{variables.$mg-prefix}-cost {
+        margin-left: -.675em;
+    }
+}
+
+.#{variables.$mg-prefix}-half { // new single-element handling!
+    width: .675em;
+    margin-left: .675em;
+    overflow: hidden;
+    border-radius: 0 1em 1em 0;
+    &::before {
+        margin-left: -.65em;
+    }
+}
+
+
+// un-set costs
+
+.#{variables.$mg-prefix}-100 {
+    width: 2.4em;
+}
+.#{variables.$mg-prefix}-1000000 {
+    width: 5.4em;
+}

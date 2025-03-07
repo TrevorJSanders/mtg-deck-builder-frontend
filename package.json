@@ -35,7 +35,7 @@
     "localforage": "^1.10.0",
     "lodash": "^4.17.21",
     "lucide-react": "^0.460.0",
-    "mana-font": "^1.18.0",
+    "mana-font": "file:local_modules/mana-font",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "recharts": "^2.15.0",

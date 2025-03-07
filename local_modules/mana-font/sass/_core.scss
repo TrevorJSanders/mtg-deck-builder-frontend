@@ -1,0 +1,24 @@
+@use "variables";
+
+// base
+.#{variables.$mg-prefix} {
+    display: inline-block;
+    font: normal normal normal variables.$mg-font-size-base Mana;
+    font-size: inherit;
+    line-height: 1em;
+    text-rendering: auto;
+    transform: translate(0, 0);
+    speak: none;
+    text-transform: none;
+    vertical-align: middle;
+    // Better font rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --mg-mana-b: #a7999e;
+    --mg-mana-c: #d0c6bb;
+    --mg-mana-g: #9fcba6; //#9ba;
+    --mg-mana-r: #f19b79;
+    --mg-mana-u: #bcdaf7;
+    --mg-mana-w: #fdfbce;
+}

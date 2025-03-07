@@ -1,0 +1,7 @@
+@use "variables";
+
+.#{variables.$mg-prefix}-mechanic {
+    background: variables.$mg-ability-grad;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
