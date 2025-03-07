@@ -12,6 +12,10 @@ export function MTGTable() {
   >({
     queryKey: ["bulkLoad"],
     queryFn: getAllCardsMTG,
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+    retry: false,
+    staleTime: Infinity,
   });
 
   if (isLoading) {
