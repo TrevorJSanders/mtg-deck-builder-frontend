@@ -23,8 +23,8 @@ function App() {
             <MTGmenu />
             <div className="flex flex-1 flex-row overflow-hidden">
               <div className="flex flex-col w-2/3">
-                {isMobile && <MTGTable />}
-                {!isMobile && "Mobile not working yet... I'm on it :)"}
+                {!isMobile && <MTGTable />}
+                {isMobile && "Mobile not working yet... I'm on it :)"}
               </div>
               <div className="flex flex-1 flex-col w-1/3 ">
                 <div className="flex flex-row">
