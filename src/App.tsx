@@ -8,10 +8,13 @@ import { MTGCardImage } from "./components/MTGCardImage";
 import { MTGContextProvider } from "./contexts/contexts";
 import { MTGDeckInfo } from "./components/MTGDeckInfo";
 import { MTGDeck } from "./components/MTGDeck";
+import { useDeviceDetection } from "./hooks/useDeviceDetection";
 //import { DataTableProvider } from "./contexts/dataTableContext";
 //import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 function App() {
+  const { isMobile } = useDeviceDetection();
+
   return (
     <>
       <QueryClientProvider client={queryClient}>
@@ -20,7 +23,8 @@ function App() {
             <MTGmenu />
             <div className="flex flex-1 flex-row overflow-hidden">
               <div className="flex flex-col w-2/3">
-                <MTGTable />
+                {isMobile && <MTGTable />}
+                {!isMobile && "Mobile not working yet... I'm on it :)"}
               </div>
               <div className="flex flex-1 flex-col w-1/3 ">
                 <div className="flex flex-row">
