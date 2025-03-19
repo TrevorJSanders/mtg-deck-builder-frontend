@@ -12,6 +12,7 @@ import "../local_modules/mana-font/css/mana.min.css";
 import { MTGmenu } from "./components/MTGmenu";
 import { queryClient } from "./services/apiClient";
 import { MTGTable } from "./components/MTGTable";
+import { MTGTableAdapter } from "./components/MTG-Table";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { MTGCardImage } from "./components/MTGCardImage";
 import { MTGContextProvider } from "./contexts/contexts";
@@ -33,7 +34,7 @@ function App() {
             <div className="flex flex-1 flex-row overflow-hidden">
               <div className="flex flex-col w-2/3">
                 {!isMobile && <MTGTable />}
-                {isMobile && "Mobile not working yet... I'm on it :)"}
+                {isMobile && <MTGTableAdapter type="" rows="" />}
               </div>
               <div className="flex flex-1 flex-col w-1/3 ">
                 <div className="flex flex-row">
