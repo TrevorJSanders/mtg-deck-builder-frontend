@@ -15,7 +15,7 @@ export const queryClient = new QueryClient({
   });
 
 export const apiClient = axios.create({
-  baseURL: 'https://mtg-deck-builder-backend.onrender.com/api/',
+  baseURL: process.env.REACT_APP_API_URL || 'https://mtg-deck-builder-backend.onrender.com/api/',
   headers: {
     'Content-Type': 'application/json',
   },

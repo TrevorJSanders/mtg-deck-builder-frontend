@@ -1,3 +1,12 @@
+//frontend in Vercel
+//https://render.com/
+
+//backend in Render
+//https://render.com
+
+//DB in Atlas
+//https://www.mongodb.com/cloud
+
 import "./App.css";
 import "../node_modules/mana-font/css/mana.min.css";
 import { MTGmenu } from "./components/MTGmenu";
