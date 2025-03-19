@@ -151,7 +151,7 @@ export default function MobileLayout(): JSX.Element {
     <div className="flex flex-col h-screen bg-background text-foreground">
       {/* Header */}
       <header className="border-b p-4 flex justify-between items-center">
-        <h1 className="text-lg font-bold">MTG Deckbuilder</h1>
+        <h1 className="text-lg font-bold">MTG Card Database</h1>
         <div className="flex gap-2">
           <Sheet>
             <SheetTrigger asChild>
