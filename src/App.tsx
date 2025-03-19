@@ -8,7 +8,7 @@
 //https://www.mongodb.com/cloud
 
 import "./App.css";
-import "../node_modules/mana-font/css/mana.min.css";
+import "../local_modules/mana-font/css/mana.min.css";
 import { MTGmenu } from "./components/MTGmenu";
 import { queryClient } from "./services/apiClient";
 import { MTGTable } from "./components/MTGTable";
