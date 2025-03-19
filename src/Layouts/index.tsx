@@ -7,5 +7,9 @@ export function LayoutAdapter() {
 
   if (isMobile) {
     return MobileLayout();
-  } else return DesktopLayout();
+  } else if (isMobile === false) {
+    return DesktopLayout();
+  } else {
+    return <>Loading...</>;
+  }
 }
