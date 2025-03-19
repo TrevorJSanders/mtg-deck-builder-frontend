@@ -5,11 +5,9 @@ import { DesktopLayout } from "./DesktopLayout";
 export function LayoutAdapter() {
   const { isMobile } = useDeviceDetection();
 
-  if (isMobile) {
-    return MobileLayout();
-  } else if (isMobile === false) {
-    return DesktopLayout();
-  } else {
+  if (isMobile === null) {
     return <>Loading...</>;
   }
+
+  return isMobile ? <MobileLayout /> : <DesktopLayout />;
 }
