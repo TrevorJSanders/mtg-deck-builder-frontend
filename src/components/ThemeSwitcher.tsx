@@ -1,6 +1,7 @@
 // src/components/ColorThemeSelector.tsx
 import { Label } from "@/components/ui/label";
 import { useTheme } from "../contexts/ThemeProvider";
+import { Button } from "./ui/button";
 
 const ColorThemeSelector = () => {
   const { colorTheme, changeColorTheme, COLOR_THEMES } = useTheme();
@@ -20,13 +21,13 @@ const ColorThemeSelector = () => {
       <Label htmlFor="theme">Primary Color</Label>
       <div className="my-2 flex flex-wrap gap-2">
         {Object.entries(COLOR_THEMES).map(([key, value]) => (
-          <button
+          <Button
             key={key}
             onClick={() => changeColorTheme(value)}
-            className={`rounded ${
-              colorTheme === value ? "ring-2 ring-foreground" : "bg-secondary"
+            className={`m-0 p-0 hover:bg-mgc-${themeNames[value]} ${
+              colorTheme === value ? "ring-2 ring-primary/50" : "ring-icon"
             } mg mg-${themeNames[value]} mg-cost mg-2x`}
-          ></button>
+          ></Button>
         ))}
       </div>
     </div>

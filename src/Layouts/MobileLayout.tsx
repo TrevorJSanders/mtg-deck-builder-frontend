@@ -452,7 +452,7 @@ export default function MobileLayout(): JSX.Element {
                       <div>
                         <h3 className="font-bold text-lg">Deck Stats</h3>
                         <p className="text-muted-foreground">
-                          Litterally the most important stats you can think of!
+                          Litterally the most important stats you could imagine!
                         </p>
                       </div>
                       <div className="space-y-2 text-left border rounded-lg p-4">
