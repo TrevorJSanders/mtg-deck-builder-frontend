@@ -387,9 +387,7 @@ export default function MobileLayout(): JSX.Element {
           <div className="flex-1 border-l">
             <div className="h-full flex flex-col">
               <div className="border-b p-4 flex justify-between items-center">
-                <h2 className="font-bold text-lg">
-                  My Deck ({totalCards} cards)
-                </h2>
+                <h2 className="font-bold text-lg">Deckname</h2>
                 <div className="flex gap-2">
                   <Button
                     variant={deckView === "cards" ? "default" : "outline"}
@@ -422,7 +420,7 @@ export default function MobileLayout(): JSX.Element {
                   <div className="p-4 space-y-2">
                     {deckCards.length === 0 ? (
                       <div className="text-center py-8 text-muted-foreground">
-                        Your deck is empty. Add some cards!
+                        Your deck is empty fool!
                       </div>
                     ) : (
                       deckCards.map((card) => (
@@ -452,13 +450,15 @@ export default function MobileLayout(): JSX.Element {
                     <div className="text-center py-8 space-y-4">
                       <BarChart3 className="mx-auto h-16 w-16 text-muted-foreground" />
                       <div>
-                        <h3 className="font-bold text-lg">Deck Statistics</h3>
+                        <h3 className="font-bold text-lg">Deck Stats</h3>
                         <p className="text-muted-foreground">
-                          Your deck statistics and charts will appear here
+                          Litterally the most important stats you can think of!
                         </p>
                       </div>
                       <div className="space-y-2 text-left border rounded-lg p-4">
-                        <h4 className="font-medium">Quick Stats</h4>
+                        <h4 className="font-medium">
+                          Redbull Statistics Dashboard
+                        </h4>
                         <div className="grid grid-cols-2 gap-2">
                           <div>Total Cards:</div>
                           <div className="font-medium">{totalCards}</div>
