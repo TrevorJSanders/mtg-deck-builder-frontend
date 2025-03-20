@@ -25,7 +25,9 @@ const ColorThemeSelector = () => {
             key={key}
             onClick={() => changeColorTheme(value)}
             className={`m-0 p-0 hover:bg-mgc-${themeNames[value]} ${
-              colorTheme === value ? "ring-2 ring-primary/50" : "ring-icon"
+              colorTheme === value
+                ? "ring-2 ring-secondary-foreground"
+                : "ring-icon"
             } mg mg-${themeNames[value]} mg-cost mg-2x`}
           ></Button>
         ))}
