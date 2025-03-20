@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Search,
   Settings,
@@ -48,9 +48,28 @@ export default function MobileLayout(): JSX.Element {
   // State for deck sidebar and view
   const [isDeckOpen, setIsDeckOpen] = useState<boolean>(false);
   const [deckView, setDeckView] = useState<"cards" | "stats">("cards");
+  const [windowHeight, setWindowHeight] = useState<number>(0);
 
   const { mode, toggleMode } = useTheme();
   const isDarkMode = mode === "dark";
+
+  // Effect to set and update window height
+  useEffect(() => {
+    // Set initial height
+    setWindowHeight(window.innerHeight);
+
+    // Update height on resize
+    const handleResize = () => {
+      setWindowHeight(window.innerHeight);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Clean up
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   // Sample card data
   const sampleCards: Card[] = [
@@ -152,10 +171,17 @@ export default function MobileLayout(): JSX.Element {
   // Calculate total cards in deck
   const totalCards = deckCards.reduce((acc, card) => acc + card.quantity, 0);
 
+  // Calculate header height (approximate)
+  const headerHeight = 64; // 16px (p-4) * 2 + ~32px content height
+  const contentHeight = windowHeight - headerHeight;
+
   return (
-    <div className="flex flex-col h-screen bg-background text-foreground overflow-hidden">
+    <div
+      className="flex flex-col bg-background text-foreground fixed inset-0 overflow-hidden"
+      style={{ height: "100vh", maxHeight: "100vh" }}
+    >
       {/* Fixed Header */}
-      <header className="border-b p-4 flex justify-between items-center z-10">
+      <header className="border-b p-4 flex justify-between items-center z-10 w-full">
         <h1 className="text-lg font-bold">Cocaktrice</h1>
         <div className="flex gap-2">
           <Sheet>
@@ -164,15 +190,18 @@ export default function MobileLayout(): JSX.Element {
                 <Filter className="h-4 w-4" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="flex flex-col h-full p-0">
-              <SheetHeader className="px-4 py-4 border-b">
+            <SheetContent
+              side="right"
+              className="flex flex-col h-full p-0 overflow-hidden"
+            >
+              <SheetHeader className="px-4 py-4 border-b shrink-0">
                 <SheetTitle>Search & Filter</SheetTitle>
                 <SheetDescription>
                   Set filters for MTG card database
                 </SheetDescription>
               </SheetHeader>
               {/* Main scrollable content area */}
-              <ScrollArea className="flex-1">
+              <ScrollArea className="flex-1 overflow-auto">
                 <div className="px-4 py-4 space-y-4">
                   {/* Search bar integrated into filter drawer */}
                   <div>
@@ -296,7 +325,7 @@ export default function MobileLayout(): JSX.Element {
                 </div>
               </ScrollArea>
               {/* Fixed footer for actions */}
-              <div className="mt-auto p-4 border-t flex justify-between">
+              <div className="p-4 border-t flex justify-between shrink-0">
                 <Button variant="outline">Reset</Button>
                 <SheetClose asChild>
                   <Button>Apply Filters</Button>
@@ -310,13 +339,16 @@ export default function MobileLayout(): JSX.Element {
                 <Settings className="h-4 w-4" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="flex flex-col h-full p-0">
-              <SheetHeader className="px-4 py-4 border-b">
+            <SheetContent
+              side="right"
+              className="flex flex-col h-full p-0 overflow-hidden"
+            >
+              <SheetHeader className="px-4 py-4 border-b shrink-0">
                 <SheetTitle>Settings</SheetTitle>
                 <SheetDescription>At BK, you have it your way</SheetDescription>
               </SheetHeader>
               {/* Main scrollable content area */}
-              <ScrollArea className="flex-1">
+              <ScrollArea className="flex-1 overflow-auto">
                 <div className="px-4 py-4 space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="space-y-0.5">
@@ -374,15 +406,18 @@ export default function MobileLayout(): JSX.Element {
         </div>
       </header>
 
-      {/* Main Content Area with fixed height */}
-      <div className="flex flex-1 overflow-hidden">
+      {/* Main Content Area with explicit height */}
+      <div
+        className="flex flex-1 overflow-hidden"
+        style={{ height: contentHeight, maxHeight: contentHeight }}
+      >
         {/* Main card browser */}
         <div
           className={`flex-1 ${
             isDeckOpen ? "hidden md:block md:w-1/3" : "block"
           }`}
         >
-          <ScrollArea className="h-full">
+          <ScrollArea className="h-full overflow-auto">
             <div className="p-4 space-y-2">
               {sampleCards.map((card) => (
                 <div
@@ -407,9 +442,9 @@ export default function MobileLayout(): JSX.Element {
 
         {/* Deck sidebar/overlay */}
         {isDeckOpen && (
-          <div className="flex-1 border-l flex flex-col">
+          <div className="flex-1 border-l flex flex-col overflow-hidden">
             {/* Fixed deck header */}
-            <div className="border-b p-4 flex justify-between items-center">
+            <div className="border-b p-4 flex justify-between items-center shrink-0">
               <h2 className="font-bold text-lg">Deckname</h2>
               <div className="flex gap-2">
                 <Button
@@ -440,7 +475,7 @@ export default function MobileLayout(): JSX.Element {
 
             {/* Scrollable deck content */}
             {deckView === "cards" ? (
-              <ScrollArea className="flex-1">
+              <ScrollArea className="flex-1 overflow-auto">
                 <div className="p-4 space-y-2">
                   {deckCards.length === 0 ? (
                     <div className="text-center py-8 text-muted-foreground">
@@ -469,7 +504,7 @@ export default function MobileLayout(): JSX.Element {
                 </div>
               </ScrollArea>
             ) : (
-              <ScrollArea className="flex-1">
+              <ScrollArea className="flex-1 overflow-auto">
                 <div className="p-4">
                   <div className="text-center py-8 space-y-4">
                     <BarChart3 className="mx-auto h-16 w-16 text-muted-foreground" />
