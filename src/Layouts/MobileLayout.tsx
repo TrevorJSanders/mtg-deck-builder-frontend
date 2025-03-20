@@ -156,7 +156,7 @@ export default function MobileLayout(): JSX.Element {
     <div className="flex flex-col h-screen bg-background text-foreground">
       {/* Header */}
       <header className="border-b p-4 flex justify-between items-center">
-        <h1 className="text-lg font-bold">MTG Card Database</h1>
+        <h1 className="text-lg font-bold">Cocaktrice</h1>
         <div className="flex gap-2">
           <Sheet>
             <SheetTrigger asChild>
@@ -168,7 +168,7 @@ export default function MobileLayout(): JSX.Element {
               <SheetHeader>
                 <SheetTitle>Search & Filter</SheetTitle>
                 <SheetDescription>
-                  Find and filter cards for your deck
+                  Set filters for MTG card database
                 </SheetDescription>
               </SheetHeader>
               <div className="py-4 space-y-4">
@@ -179,7 +179,7 @@ export default function MobileLayout(): JSX.Element {
                     <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
                     <Input
                       id="search"
-                      placeholder="Card name, text, type..."
+                      placeholder="Card name"
                       className="pl-8"
                     />
                   </div>
@@ -188,33 +188,89 @@ export default function MobileLayout(): JSX.Element {
                 <div>
                   <h3 className="font-medium mb-2">Card Type</h3>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline">Creature</Badge>
-                    <Badge variant="outline">Instant</Badge>
-                    <Badge variant="outline">Sorcery</Badge>
-                    <Badge variant="outline">Artifact</Badge>
-                    <Badge variant="outline">Enchantment</Badge>
-                    <Badge variant="outline">Planeswalker</Badge>
-                    <Badge variant="outline">Land</Badge>
+                    <Button
+                      variant="outline"
+                      className="text-muted-foreground mg mg-artifact ms-fw"
+                    />
+                    <Button
+                      variant="outline"
+                      className="text-muted-foreground mg mg-creature ms-fw"
+                    />
+                    <Button
+                      variant="outline"
+                      className="text-muted-foreground mg mg-enchantment ms-fw"
+                    />
+                    <Button
+                      variant="outline"
+                      className="text-muted-foreground mg mg-land ms-fw"
+                    />
+                    <Button
+                      variant="outline"
+                      className="text-muted-foreground mg mg-instant"
+                    />
+                    <Button
+                      variant="outline"
+                      className="text-muted-foreground mg mg-sorcery ms-fw"
+                    />
+                    <Button
+                      variant="outline"
+                      className="text-muted-foreground mg mg-planeswalker ms-fw"
+                    />
+                    <Button
+                      variant="outline"
+                      className="text-muted-foreground mg mg-commander ms-fw"
+                    />
                   </div>
                 </div>
                 <div>
                   <h3 className="font-medium mb-2">Rarity</h3>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline">Common</Badge>
-                    <Badge variant="outline">Uncommon</Badge>
-                    <Badge variant="outline">Rare</Badge>
-                    <Badge variant="outline">Mythic</Badge>
+                    <Button variant="outline" className="text-muted-foreground">
+                      Common
+                    </Button>
+                    <Button variant="outline" className="text-muted-foreground">
+                      Uncommon
+                    </Button>
+                    <Button variant="outline" className="text-muted-foreground">
+                      Rare
+                    </Button>
+                    <Button variant="outline" className="text-muted-foreground">
+                      Mythic
+                    </Button>
                   </div>
                 </div>
                 <div>
                   <h3 className="font-medium mb-2">Mana Colors</h3>
                   <div className="flex flex-wrap gap-2">
-                    <i className="mg mg-w mg-cost" />
-                    <i className="mg mg-u mg-cost" />
-                    <i className="mg mg-b mg-cost" />
-                    <i className="mg mg-r mg-cost" />
-                    <i className="mg mg-g mg-cost" />
-                    <i className="mg mg-c mg-cost" />
+                    <Button
+                      className={`p-0 m-0 hover:ring-primary ring-2 ring-input mg mg-w mg-cost mg-2x`}
+                    ></Button>
+                    <Button
+                      className={`p-0 m-0 hover:ring-primary ring-2 ring-input mg mg-u mg-cost mg-2x`}
+                    ></Button>
+                    <Button
+                      className={`p-0 m-0 hover:ring-primary ring-2 ring-input mg mg-b mg-cost mg-2x`}
+                    ></Button>
+                    <Button
+                      className={`p-0 m-0 hover:ring-primary ring-2 ring-input mg mg-r mg-cost mg-2x`}
+                    ></Button>
+                    <Button
+                      className={`p-0 m-0 hover:ring-primary ring-2 ring-input mg mg-g mg-cost mg-2x`}
+                    ></Button>
+                    <Button
+                      className={`p-0 m-0 hover:ring-primary hover:bg-mgc-c ring-2 ring-input mg mg-c mg-cost mg-2x`}
+                    ></Button>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="font-medium mb-2">Attributes</h3>
+                  <div className="flex flex-wrap gap-2">
+                    <Button variant="outline" className="text-muted-foreground">
+                      Full Art
+                    </Button>
+                    <Button variant="outline" className="text-muted-foreground">
+                      Double Faced
+                    </Button>
                   </div>
                 </div>
                 <div className="pt-4 flex justify-between">

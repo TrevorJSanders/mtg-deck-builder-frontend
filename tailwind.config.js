@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
     darkMode: ["class"],
     content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
@@ -44,12 +45,12 @@ module.exports = {
   			input: 'hsl(var(--input))',
   			ring: 'hsl(var(--ring))',
   			mgc: {
-				w: 'hsl(var(--magic-color-white))',
-				u: 'hsl(var(--magic-color-blue))',
-				b: 'hsl(var(--magic-color-black))',
-				r: 'hsl(var(--magic-color-red))',
-				g: 'hsl(var(--magic-color-green))',
-				c: 'hsl(var(--magic-color-colorless))',
+				w: 'hsl(62 66.61% 85.02% / <alpha-value>)',
+    			u: 'hsl(209 44.72% 80.1% / <alpha-value>)',
+    			b: 'hsl(27 8.16% 60.8% / <alpha-value>)',
+    			r: 'hsl(17 62.39% 62.78% / <alpha-value>)',
+    			g: 'hsl(100 24.84% 61.41% / <alpha-value>)',
+    			c: 'hsl(35 8.26% 72.75% / <alpha-value>)',
 			},
   			sidebar: {
   				DEFAULT: 'hsl(var(--sidebar-background))',

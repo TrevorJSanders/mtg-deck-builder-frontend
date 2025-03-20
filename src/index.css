@@ -25,12 +25,12 @@
     --radius: 0.5rem;
     
     /* Define your color palette once */
-    --magic-color-white: 62, 66.61%, 85.02%;
-    --magic-color-blue: 209, 44.72%, 80.1%;
-    --magic-color-black: 27, 8.16%, 60.8%;
-    --magic-color-red: 17, 62.39%, 62.78%;
-    --magic-color-green: 100, 24.84%, 61.41%;
-    --magic-color-colorless: 35, 8.26%, 72.75%;
+    --magic-color-white: 62 66.61% 85.02%;
+    --magic-color-blue: 209 44.72% 80.1%;
+    --magic-color-black: 27 8.16% 60.8%;
+    --magic-color-red: 17 62.39% 62.78%;
+    --magic-color-green: 100 24.84% 61.41%;
+    --magic-color-colorless: 35 8.26% 72.75%;
     
     /* Default primary color (green) */
     --primary: var(--magic-color-green);
