@@ -26,6 +26,9 @@ import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import ThemeSwitcher from "@/components/ThemeSwitcher";
+import DarkModeToggle from "@/components/DarkModeToggle";
+import { useTheme } from "@/contexts/ThemeProvider";
 
 // Define card types
 interface Card {
@@ -46,6 +49,9 @@ export default function MobileLayout(): JSX.Element {
   // State for deck sidebar and view
   const [isDeckOpen, setIsDeckOpen] = useState<boolean>(false);
   const [deckView, setDeckView] = useState<"cards" | "stats">("cards");
+
+  const { mode, toggleMode } = useTheme();
+  const isDarkMode = mode === "dark";
 
   // Sample card data
   const sampleCards: Card[] = [
@@ -204,16 +210,12 @@ export default function MobileLayout(): JSX.Element {
                 <div>
                   <h3 className="font-medium mb-2">Mana Colors</h3>
                   <div className="flex flex-wrap gap-2">
-                    <Badge className="bg-white text-black border-black">
-                      White
-                    </Badge>
-                    <Badge className="bg-blue-500">Blue</Badge>
-                    <Badge className="bg-black">Black</Badge>
-                    <Badge className="bg-red-500">Red</Badge>
-                    <Badge className="bg-green-500">Green</Badge>
-                    <Badge className="bg-gray-300 text-black border-black">
-                      Colorless
-                    </Badge>
+                    <i className="mg mg-w mg-cost" />
+                    <i className="mg mg-u mg-cost" />
+                    <i className="mg mg-b mg-cost" />
+                    <i className="mg mg-r mg-cost" />
+                    <i className="mg mg-g mg-cost" />
+                    <i className="mg mg-c mg-cost" />
                   </div>
                 </div>
                 <div className="pt-4 flex justify-between">
@@ -242,15 +244,17 @@ export default function MobileLayout(): JSX.Element {
                 <div className="flex items-center justify-between">
                   <div className="space-y-0.5">
                     <Label htmlFor="theme">Dark Mode</Label>
-                    <div className="text-xs text-muted-foreground">
-                      Toggle between light and dark themes
-                    </div>
                   </div>
                   <div className="flex items-center">
                     <SunMoon className="mr-2 h-4 w-4" />
-                    <Switch id="theme" />
+                    <Switch
+                      id="theme"
+                      checked={isDarkMode}
+                      onCheckedChange={toggleMode}
+                    />
                   </div>
                 </div>
+                <ThemeSwitcher />
                 <div className="pt-4 space-y-2">
                   <Button
                     variant="outline"

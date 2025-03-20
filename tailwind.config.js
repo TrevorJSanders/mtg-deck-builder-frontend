@@ -49,6 +49,7 @@ module.exports = {
 				b: 'hsl(var(--magic-color-black))',
 				r: 'hsl(var(--magic-color-red))',
 				g: 'hsl(var(--magic-color-green))',
+				c: 'hsl(var(--magic-color-colorless))',
 			},
   			sidebar: {
   				DEFAULT: 'hsl(var(--sidebar-background))',

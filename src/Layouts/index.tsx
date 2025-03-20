@@ -9,5 +9,6 @@ export function LayoutAdapter() {
     return <>Loading...</>;
   }
 
+  //return <MobileLayout />;
   return isMobile ? <MobileLayout /> : <DesktopLayout />;
 }
