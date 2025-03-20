@@ -27,7 +27,6 @@ import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
-import DarkModeToggle from "@/components/DarkModeToggle";
 import { useTheme } from "@/contexts/ThemeProvider";
 
 // Define card types
