@@ -48,28 +48,9 @@ export default function MobileLayout(): JSX.Element {
   // State for deck sidebar and view
   const [isDeckOpen, setIsDeckOpen] = useState<boolean>(false);
   const [deckView, setDeckView] = useState<"cards" | "stats">("cards");
-  const [windowHeight, setWindowHeight] = useState<number>(0);
 
   const { mode, toggleMode } = useTheme();
   const isDarkMode = mode === "dark";
-
-  // Effect to set and update window height
-  useEffect(() => {
-    // Set initial height
-    setWindowHeight(window.innerHeight);
-
-    // Update height on resize
-    const handleResize = () => {
-      setWindowHeight(window.innerHeight);
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    // Clean up
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
 
   // Sample card data
   const sampleCards: Card[] = [
@@ -171,17 +152,10 @@ export default function MobileLayout(): JSX.Element {
   // Calculate total cards in deck
   const totalCards = deckCards.reduce((acc, card) => acc + card.quantity, 0);
 
-  // Calculate header height (approximate)
-  const headerHeight = 64; // 16px (p-4) * 2 + ~32px content height
-  const contentHeight = windowHeight - headerHeight;
-
   return (
-    <div
-      className="flex flex-col bg-background text-foreground fixed inset-0 overflow-hidden"
-      style={{ height: "100vh", maxHeight: "100vh" }}
-    >
+    <div className="flex flex-col bg-background text-foreground h-screen">
       {/* Fixed Header */}
-      <header className="border-b p-4 flex justify-between items-center z-10 w-full">
+      <header className="border-b p-4 flex justify-between items-center z-10 w-full fixed top-0 left-0 right-0 bg-background">
         <h1 className="text-lg font-bold">Cocaktrice</h1>
         <div className="flex gap-2">
           <Sheet>
@@ -286,22 +260,22 @@ export default function MobileLayout(): JSX.Element {
                     <h3 className="font-medium mb-2">Mana Colors</h3>
                     <div className="flex flex-wrap gap-2">
                       <Button
-                        className={`p-0 m-0 hover:ring-primary ring-2 ring-input mg mg-w mg-cost mg-2x`}
+                        className={`p-0 m-0 hover:ring-secondary-foreground ring-2 ring-input mg mg-w mg-cost mg-2x`}
                       ></Button>
                       <Button
-                        className={`p-0 m-0 hover:ring-primary ring-2 ring-input mg mg-u mg-cost mg-2x`}
+                        className={`p-0 m-0 hover:ring-secondary-foreground ring-2 ring-input mg mg-u mg-cost mg-2x`}
                       ></Button>
                       <Button
-                        className={`p-0 m-0 hover:ring-primary ring-2 ring-input mg mg-b mg-cost mg-2x`}
+                        className={`p-0 m-0 hover:ring-secondary-foreground ring-2 ring-input mg mg-b mg-cost mg-2x`}
                       ></Button>
                       <Button
-                        className={`p-0 m-0 hover:ring-primary ring-2 ring-input mg mg-r mg-cost mg-2x`}
+                        className={`p-0 m-0 hover:ring-secondary-foreground ring-2 ring-input mg mg-r mg-cost mg-2x`}
                       ></Button>
                       <Button
-                        className={`p-0 m-0 hover:ring-primary ring-2 ring-input mg mg-g mg-cost mg-2x`}
+                        className={`p-0 m-0 hover:ring-secondary-foreground ring-2 ring-input mg mg-g mg-cost mg-2x`}
                       ></Button>
                       <Button
-                        className={`p-0 m-0 hover:ring-primary hover:bg-mgc-c ring-2 ring-input mg mg-c mg-cost mg-2x`}
+                        className={`p-0 m-0 hover:ring-secondary-foreground hover:bg-mgc-c ring-2 ring-input mg mg-c mg-cost mg-2x`}
                       ></Button>
                     </div>
                   </div>
@@ -407,17 +381,16 @@ export default function MobileLayout(): JSX.Element {
       </header>
 
       {/* Main Content Area with explicit height */}
-      <div
-        className="flex flex-1 overflow-hidden"
-        style={{ height: contentHeight, maxHeight: contentHeight }}
-      >
+      <div className="flex flex-1 pt-16">
         {/* Main card browser */}
         <div
           className={`flex-1 ${
             isDeckOpen ? "hidden md:block md:w-1/3" : "block"
           }`}
         >
-          <ScrollArea className="h-full overflow-auto">
+          <div className="h-full overflow-auto">
+            {" "}
+            {/* No ScrollArea wrapper */}
             <div className="p-4 space-y-2">
               {sampleCards.map((card) => (
                 <div
@@ -437,14 +410,14 @@ export default function MobileLayout(): JSX.Element {
                 </div>
               ))}
             </div>
-          </ScrollArea>
+          </div>
         </div>
 
-        {/* Deck sidebar/overlay */}
+        {/* Deck sidebar/overlay - similar modifications */}
         {isDeckOpen && (
-          <div className="flex-1 border-l flex flex-col overflow-hidden">
-            {/* Fixed deck header */}
-            <div className="border-b p-4 flex justify-between items-center shrink-0">
+          <div className="flex-1 border-l flex flex-col">
+            {/* Fixed deck header - also fixed to the top */}
+            <div className="border-b p-4 flex justify-between items-center sticky top-16 bg-background z-10">
               <h2 className="font-bold text-lg">Deckname</h2>
               <div className="flex gap-2">
                 <Button
@@ -475,7 +448,7 @@ export default function MobileLayout(): JSX.Element {
 
             {/* Scrollable deck content */}
             {deckView === "cards" ? (
-              <ScrollArea className="flex-1 overflow-auto">
+              <div className="overflow-auto">
                 <div className="p-4 space-y-2">
                   {deckCards.length === 0 ? (
                     <div className="text-center py-8 text-muted-foreground">
@@ -502,9 +475,9 @@ export default function MobileLayout(): JSX.Element {
                     ))
                   )}
                 </div>
-              </ScrollArea>
+              </div>
             ) : (
-              <ScrollArea className="flex-1 overflow-auto">
+              <div className="overflow-auto">
                 <div className="p-4">
                   <div className="text-center py-8 space-y-4">
                     <BarChart3 className="mx-auto h-16 w-16 text-muted-foreground" />
@@ -533,7 +506,7 @@ export default function MobileLayout(): JSX.Element {
                     </div>
                   </div>
                 </div>
-              </ScrollArea>
+              </div>
             )}
           </div>
         )}
