@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Search,
   Settings,
@@ -25,7 +25,6 @@ import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import ThemeSwitcher from "@/components/ThemeSwitcher";
 import { useTheme } from "@/contexts/ThemeProvider";
 
@@ -49,6 +48,7 @@ export default function MobileLayout(): JSX.Element {
   const [isDeckOpen, setIsDeckOpen] = useState<boolean>(false);
   const [deckView, setDeckView] = useState<"cards" | "stats">("cards");
 
+  // We don't need windowHeight anymore
   const { mode, toggleMode } = useTheme();
   const isDarkMode = mode === "dark";
 
@@ -154,7 +154,7 @@ export default function MobileLayout(): JSX.Element {
 
   return (
     <div className="flex flex-col bg-background text-foreground h-screen">
-      {/* Fixed Header */}
+      {/* Fixed Header - stays in place */}
       <header className="border-b p-4 flex justify-between items-center z-10 w-full fixed top-0 left-0 right-0 bg-background">
         <h1 className="text-lg font-bold">Cocaktrice</h1>
         <div className="flex gap-2">
@@ -164,18 +164,17 @@ export default function MobileLayout(): JSX.Element {
                 <Filter className="h-4 w-4" />
               </Button>
             </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="flex flex-col h-full p-0 overflow-hidden"
-            >
-              <SheetHeader className="px-4 py-4 border-b shrink-0">
+            <SheetContent side="right" className="flex flex-col h-full p-0">
+              {/* Fixed Sheet Header */}
+              <SheetHeader className="px-4 py-4 border-b sticky top-0 bg-background z-10">
                 <SheetTitle>Search & Filter</SheetTitle>
                 <SheetDescription>
                   Set filters for MTG card database
                 </SheetDescription>
               </SheetHeader>
-              {/* Main scrollable content area */}
-              <ScrollArea className="flex-1 overflow-auto">
+
+              {/* Scrollable content area - now using native overflow instead of ScrollArea */}
+              <div className="overflow-auto flex-1">
                 <div className="px-4 py-4 space-y-4">
                   {/* Search bar integrated into filter drawer */}
                   <div>
@@ -297,9 +296,10 @@ export default function MobileLayout(): JSX.Element {
                     </div>
                   </div>
                 </div>
-              </ScrollArea>
-              {/* Fixed footer for actions */}
-              <div className="p-4 border-t flex justify-between shrink-0">
+              </div>
+
+              {/* Fixed footer for actions - sticky to the bottom */}
+              <div className="p-4 border-t flex justify-between sticky bottom-0 bg-background z-10">
                 <Button variant="outline">Reset</Button>
                 <SheetClose asChild>
                   <Button>Apply Filters</Button>
@@ -307,22 +307,22 @@ export default function MobileLayout(): JSX.Element {
               </div>
             </SheetContent>
           </Sheet>
+
           <Sheet>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
                 <Settings className="h-4 w-4" />
               </Button>
             </SheetTrigger>
-            <SheetContent
-              side="right"
-              className="flex flex-col h-full p-0 overflow-hidden"
-            >
-              <SheetHeader className="px-4 py-4 border-b shrink-0">
+            <SheetContent side="right" className="flex flex-col h-full p-0">
+              {/* Fixed Settings Header */}
+              <SheetHeader className="px-4 py-4 border-b sticky top-0 bg-background z-10">
                 <SheetTitle>Settings</SheetTitle>
                 <SheetDescription>At BK, you have it your way</SheetDescription>
               </SheetHeader>
-              {/* Main scrollable content area */}
-              <ScrollArea className="flex-1 overflow-auto">
+
+              {/* Scrollable content area - using native overflow */}
+              <div className="overflow-auto flex-1">
                 <div className="px-4 py-4 space-y-4">
                   <div className="flex items-center justify-between">
                     <div className="space-y-0.5">
@@ -361,9 +361,10 @@ export default function MobileLayout(): JSX.Element {
                     </Button>
                   </div>
                 </div>
-              </ScrollArea>
+              </div>
             </SheetContent>
           </Sheet>
+
           <Button
             variant="outline"
             size="icon"
@@ -380,8 +381,10 @@ export default function MobileLayout(): JSX.Element {
         </div>
       </header>
 
-      {/* Main Content Area with explicit height */}
+      {/* Main Content Area with padding to account for fixed header */}
       <div className="flex flex-1 pt-16">
+        {" "}
+        {/* pt-16 adds padding equal to header height */}
         {/* Main card browser */}
         <div
           className={`flex-1 ${
@@ -390,7 +393,7 @@ export default function MobileLayout(): JSX.Element {
         >
           <div className="h-full overflow-auto">
             {" "}
-            {/* No ScrollArea wrapper */}
+            {/* Using native overflow */}
             <div className="p-4 space-y-2">
               {sampleCards.map((card) => (
                 <div
@@ -412,11 +415,10 @@ export default function MobileLayout(): JSX.Element {
             </div>
           </div>
         </div>
-
-        {/* Deck sidebar/overlay - similar modifications */}
+        {/* Deck sidebar/overlay */}
         {isDeckOpen && (
-          <div className="flex-1 border-l flex flex-col">
-            {/* Fixed deck header - also fixed to the top */}
+          <div className="flex-1 border-l flex flex-col h-full">
+            {/* Fixed deck header - using sticky instead of fixed */}
             <div className="border-b p-4 flex justify-between items-center sticky top-16 bg-background z-10">
               <h2 className="font-bold text-lg">Deckname</h2>
               <div className="flex gap-2">
@@ -446,9 +448,9 @@ export default function MobileLayout(): JSX.Element {
               </div>
             </div>
 
-            {/* Scrollable deck content */}
+            {/* Scrollable deck content - using native overflow */}
             {deckView === "cards" ? (
-              <div className="overflow-auto">
+              <div className="overflow-auto flex-1">
                 <div className="p-4 space-y-2">
                   {deckCards.length === 0 ? (
                     <div className="text-center py-8 text-muted-foreground">
@@ -477,7 +479,7 @@ export default function MobileLayout(): JSX.Element {
                 </div>
               </div>
             ) : (
-              <div className="overflow-auto">
+              <div className="overflow-auto flex-1">
                 <div className="p-4">
                   <div className="text-center py-8 space-y-4">
                     <BarChart3 className="mx-auto h-16 w-16 text-muted-foreground" />
