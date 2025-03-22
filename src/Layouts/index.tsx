@@ -3,12 +3,14 @@ import MobileLayout from "./MobileLayout";
 import { DesktopLayout } from "./DesktopLayout";
 
 export function LayoutAdapter() {
-  const { isMobile } = useDeviceDetection();
+  const { deviceType } = useDeviceDetection();
 
-  if (isMobile === null) {
-    return <>Loading...</>;
-  }
-
-  return <MobileLayout />;
-  return isMobile ? <MobileLayout /> : <DesktopLayout />;
+  return (
+    <>
+      {deviceType === "mobile" && <MobileLayout />}
+      {deviceType === "tablet" && <MobileLayout />}
+      {deviceType === "desktop" && <DesktopLayout />}
+    </>
+  );
+  //{orientation === "portrait" ? <PortraitLayout /> : <LandscapeLayout />;}
 }
